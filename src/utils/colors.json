@@ -1,0 +1,12 @@
+{
+  "neutrals": {
+    "white": "#ffffff",
+    "white-200": "#f5f5f5",
+    "black": "#464646"
+  },
+  "primary": {
+    "blue": "#2A7AE4",
+    "blue-light": "#EAF2FD"
+
+  }
+}

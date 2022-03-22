@@ -1,0 +1,5 @@
+//arquivo para arrumar o erro de: className not match usando o styled components
+{
+  "presets": ["next/babel"],
+  "plugins": [["styled-components", { "ssr": true }]]
+}
