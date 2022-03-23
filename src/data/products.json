@@ -1,0 +1,118 @@
+{
+  "starWars": [
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper"
+    },
+    {
+      "name": "example 02",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper"
+    },
+    {
+      "name": "example 03",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper"
+    },
+    {
+      "name": "example 04",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper"
+    },
+    {
+      "name": "example 05",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper"
+    },
+    {
+      "name": "example 06",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper"
+    }
+  ],
+
+  "console": [
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: console z-box"
+    },
+    
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: console z-box"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: console z-box"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: console z-box"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: console z-box"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: console z-box"
+    }
+  ],
+  "diversos": [
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: poster"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: poster"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: poster"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: poster"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: poster"
+    },
+    {
+      "name": "example 01",
+      "price": "R$: 60,00",
+      "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+      "description": "Imagem do produto: poster"
+    }
+  ]
+}

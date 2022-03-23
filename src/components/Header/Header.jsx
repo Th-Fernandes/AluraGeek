@@ -21,7 +21,7 @@ export default function Header() {
         setLogoDimensions({width: 176, height: 50, screenWidth: widthScreen})
       })
   }, [])
-console.log(logoDimensions.width)
+//console.log(logoDimensions.width)
   
   return (
     <StyledHeader>

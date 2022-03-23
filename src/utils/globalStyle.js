@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  :root {
+  :root, button, input {
     font-family: 'Raleway', sans-serif;
   }
 
@@ -27,5 +27,8 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  ul {
+    list-style: none;
+  }
 `
 

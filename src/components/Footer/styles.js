@@ -19,13 +19,47 @@ export const StyledFooter = styled.footer`
       width: 41.8rem;
 
       & .footer-links {
-        list-style: none;
-
         & .footer-link {
           font-size: 1.6rem;
 
           &:not(last-child) {
             margin-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media(max-width: 768px){
+    padding: 3.2rem;
+
+    .footer-container {
+      &  > nav {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  @media(max-width: 425px) {
+    min-height: 55.3rem;
+    padding: 1.6rem;
+
+    .footer-container {
+      flex-wrap: wrap;
+      
+
+      & > nav {
+        justify-content: center;
+
+        & > .footer-links {
+          margin-top: 1.6rem;
+          text-align: center;
+          width: 100%;
+
+          & .footer-link { 
+            &:not(last-child) {
+              margin-bottom: 1.6rem;
+            }
           }
         }
       }
