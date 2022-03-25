@@ -2,15 +2,18 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledFooter = styled.footer`
-  background-color: ${colors.primary["blue-light"]};
+  
   height: 36.8rem;
-  padding: 6.4rem 0;
+  
   
   .footer-container {
-    max-width: 113.6rem;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    padding: 6.4rem 0;
+    background-color: ${colors.primary["blue-light"]};
+    & .channels {
+      max-width: 113.6rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
 
     & nav  {
       display: flex;
@@ -27,6 +30,23 @@ export const StyledFooter = styled.footer`
           }
         }
       }
+    }
+    }
+  }
+
+  .programer-info {
+    height: 10.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    & > span {
+      width: 100%;
+      text-align: center;
     }
   }
 

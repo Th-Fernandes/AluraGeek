@@ -82,6 +82,12 @@ export const StyledProducts = styled.section`
      }
   }
 
+  @media(min-width: 426px) and (max-width: 767px) {
+    & .products {
+      overflow-x: auto;
+    }
+  }
+
   @media(max-width: 425px) {
     padding: 3.2rem 1.6rem; 
     .products-container {
@@ -100,7 +106,7 @@ export const StyledProducts = styled.section`
     }
   }
 
-  @media(max-width: 320px) {
+  @media(max-width: 380px) {
     & .products {
       overflow-x: auto;
     }

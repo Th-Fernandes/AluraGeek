@@ -4,10 +4,11 @@ import LoginButton from "./LoginButton/LoginButton";
 import SearchBar from "./SearchBar/SearchBar";
 import { StyledHeader } from "./styles";
 import React from 'react';
-import searchIcon from "img/lupa-preta.svg"
+import searchIcon from "img/lupa-preta.svg";
+import { useRouter } from "next/dist/client/router";
 
 export default function Header() {
-  
+  const router = useRouter()
   const [logoDimensions, setLogoDimensions] = React.useState({width: 176, height: 50})
   // responsável por alterar o tamanho da logo do header. Recorri a essa solução pois 
   // no css puro (./styles.js) não estava funcionando.
@@ -21,12 +22,12 @@ export default function Header() {
         setLogoDimensions({width: 176, height: 50, screenWidth: widthScreen})
       })
   }, [])
-//console.log(logoDimensions.width)
   
   return (
     <StyledHeader>
       <div className='search-container'>
         <Image 
+          onClick={() => router.push('./')}
           src={logo.src}
           alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
           width={logoDimensions.width}
