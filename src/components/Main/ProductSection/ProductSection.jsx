@@ -1,8 +1,11 @@
 import { StyledProducts } from "./styles";
 import arrowIcon from "img/arrow.svg";
 import React from "react";
+import { useRouter } from 'next/router'
 
 export default function ProductSection(props) {
+  const router = useRouter()
+
   const products = []
   
   const renderProducts = (quantity) => {
@@ -41,30 +44,13 @@ export default function ProductSection(props) {
                 <span className="product-description">
                   <p className="product-name">{element.name}</p>
                   <p className="product-price">{element.price}</p>
-                  <a href=""> ver tudo </a>
+                  <a 
+                    onClick={() => router.push('./product')}
+                  > ver tudo </a>
                 </span>
               </li>
             )
           })
-
-          /*
-          props.productData.map((element, index) => {
-            return (
-              <li className="product" key={index}>
-                <img 
-                  src={element.thumb} 
-                  alt={element.description} 
-                />
-        
-                <span className="product-description">
-                  <p className="product-name">{element.name}</p>
-                  <p className="product-price">{element.price}</p>
-                  <a href=""> ver tudo </a>
-                </span>
-              </li>
-            )
-          })
-          */
         }
       </ul>
       </div>
