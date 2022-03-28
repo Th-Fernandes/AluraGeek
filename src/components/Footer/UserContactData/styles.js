@@ -56,6 +56,8 @@ export const StyledUserData = styled.form`
     height: 5.1rem;
   }
 
-
+  @media(max-width: 425px) {
+    padding: 0  0.8rem; 
+  }
 
 `

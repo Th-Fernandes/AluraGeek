@@ -1,5 +1,5 @@
 <h1 align="center"> AluraGeek - o desafio front-end da alura </h1>
-<img align="center" src="./src/img/logo.svg"/>
+<p align="center"> <img  src="./src/img/logo.svg"/> </p>
 
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
@@ -15,6 +15,6 @@
 <h2>Tecnologias utilizadas</h2>
 
 <ul>
-  <li>- next.js</li>
-  <li> - styled components</li>
+  <li>next.js</li>
+  <li>styled components</li>
 </ul>

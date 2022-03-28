@@ -38,7 +38,7 @@ export default function ProductSection(props) {
               <li className="product" key={index}>
                 <img 
                   src={element.thumb} 
-                  alt={element.description} 
+                  alt={element.alt} 
                 />
         
                 <span className="product-description">

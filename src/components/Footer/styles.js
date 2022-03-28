@@ -2,13 +2,12 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledFooter = styled.footer`
-  
   height: 36.8rem;
-  
-  
+
   .footer-container {
     padding: 6.4rem 0;
     background-color: ${colors.primary["blue-light"]};
+
     & .channels {
       max-width: 113.6rem;
       margin: 0 auto;
@@ -50,37 +49,27 @@ export const StyledFooter = styled.footer`
     }
   }
 
-  @media(max-width: 768px){
-    padding: 3.2rem;
 
+  @media (max-width: 800px) {
+    
     .footer-container {
-      &  > nav {
-        flex-wrap: wrap;
+      padding: 3.2rem 3.2rem;
+      & .channels {
+        
+        & nav {
+          display: block;
+        }
       }
     }
   }
 
   @media(max-width: 425px) {
-    min-height: 55.3rem;
-    padding: 1.6rem;
-
     .footer-container {
-      flex-wrap: wrap;
-      
-
-      & > nav {
-        justify-content: center;
-
-        & > .footer-links {
-          margin-top: 1.6rem;
+      padding: 3.2rem 0.8rem;
+      & .channels {
+        flex-wrap: wrap;
+        & nav {
           text-align: center;
-          width: 100%;
-
-          & .footer-link { 
-            &:not(last-child) {
-              margin-bottom: 1.6rem;
-            }
-          }
         }
       }
     }
