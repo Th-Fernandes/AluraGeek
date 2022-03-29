@@ -1,7 +1,7 @@
 import Header from "components/Header/Header"
 import Footer from "components/Footer/Footer"
 import ProductDescription from "components/Main/ProductDescription/ProductDescription"
-import SimilarProducts from "components/main/SimilarProducts/SimilarProducts"
+//import SimilarProducts from "components/main/SimilarProducts/SimilarProducts"
 import Head from 'next/head';
 
 
@@ -16,7 +16,7 @@ export default function ProductPage() {
 
       <main style={{backgroundColor: "#E5E5E5"}}>
         <ProductDescription />
-        <SimilarProducts />
+        {/*<SimilarProducts /> */}
       </main>
 
       <Footer />
