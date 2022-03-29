@@ -7,4 +7,8 @@ export const StyledLogButton = styled.button`
   border: 1px solid ${colors.primary["blue"]};
   color: ${colors.primary["blue"]};
   font-size: 1.6rem;
+
+  @media(max-width: 768px) {
+    font-weight: 600;
+  }
 `

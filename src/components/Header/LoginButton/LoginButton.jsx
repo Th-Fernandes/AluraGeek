@@ -1,14 +1,14 @@
 import { StyledLogButton } from "./styles";
 import { useRouter } from "next/router";
 
-export default function LoginButton() {
+export default function LoginButton(props) {
   const router = useRouter()
 
   return (
     <StyledLogButton
-      onClick={() => router.push('./login')}
+      onClick={() => router.push('./access/login')}
     >
-      Login
+      {props.adminVer ? 'Menu administrador' : 'Login'}
     </StyledLogButton>
   )
 }

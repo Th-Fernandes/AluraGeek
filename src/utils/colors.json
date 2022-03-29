@@ -4,7 +4,8 @@
     "white-200": "#f5f5f5",
     "white-300": "#E5E5E5",
     "black": "#464646",
-    "black-200": "#A2A2A2"
+    "black-200": "#A2A2A2",
+    "black-300": "#6B6B6B"
   },
   "primary": {
     "blue": "#2A7AE4",

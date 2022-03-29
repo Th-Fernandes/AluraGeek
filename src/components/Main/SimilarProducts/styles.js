@@ -62,9 +62,9 @@ export const StyledSimilar = styled.section`
   }
 
   @media(min-width: 1440px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 113.6rem;
+    margin: auto;
+    padding: 6.4rem 0 3.2rem;
 
     > h2 {
       width: 100%;

@@ -14,7 +14,7 @@ export default function ProductPage() {
 
       <Header />
 
-      <main style={{ backgroundColor: "#E5E5E5"}}>
+      <main style={{backgroundColor: "#E5E5E5"}}>
         <ProductDescription />
         <SimilarProducts />
       </main>
