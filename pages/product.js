@@ -1,7 +1,7 @@
 import Header from "components/Header/Header"
 import Footer from "components/Footer/Footer"
 import ProductDescription from "components/Main/ProductDescription/ProductDescription"
-import SimilarProducts from "components/main/SimilarProducts/SimilarProducts"
+import SimilarProducts from "components/main/SimilarProducts/SimilarProducts.jsx"
 import Head from 'next/head';
 
 

@@ -1,8 +1,6 @@
 import { StyledSimilar } from "./styles";
 import product from "img/star-wars-product.svg";
 import products from "data/products.json";
-import react from "react";
-
 
 export default function SimilarProducts() {
 
