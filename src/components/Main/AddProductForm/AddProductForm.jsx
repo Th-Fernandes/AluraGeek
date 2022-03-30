@@ -1,8 +1,31 @@
 import {StyledProductForm, StyledAdmProduct} from  "./styles";
 import crossIcon from "img/cross.svg";
 import InputContent from "components/InputContent/InputContent";
+import React from "react";
+import defaultImgIcon from "img/img-icon.svg"
 
 export default function AddProductForm() {
+
+  const [defaultImg, setDefaultImg] = React.useState(crossIcon.src)
+
+  React.useEffect(() => {
+    // muda o ícone da sessão de dropar arquivo dependendo do tamanho da tela
+    const changeIcon = () => {
+      const widthScreen = window.innerWidth
+      if(widthScreen >= 768) {
+        setDefaultImg(defaultImgIcon.src)
+        return
+      }
+      setDefaultImg(crossIcon.src)
+    }
+
+    changeIcon()
+
+    window.addEventListener('resize', () => {
+      changeIcon()
+    })
+}, [])
+
   return (
     <StyledProductForm
       onSubmit={event => event.preventDefault()}
@@ -12,10 +35,15 @@ export default function AddProductForm() {
 
         <div className="drop-product-container">
           <label htmlFor="">
-            <img src={crossIcon.src} alt="Icone de mais. Coloque aqui a imagem de seu produto." />
+            <img src={defaultImg} alt="Icone de mais. Coloque aqui a imagem de seu produto." />
             <p>Adicionar uma imagem para o produto</p>
           </label>
           <input type="file" />
+
+          <div className="fileOption">
+            <span>ou</span>
+            <button className="fileSearchButton">Procure no seu Tablet</button>
+          </div>
         </div>
 
         <StyledAdmProduct className="adm-product-info">

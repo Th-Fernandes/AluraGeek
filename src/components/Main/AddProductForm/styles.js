@@ -40,8 +40,25 @@ fieldset {
           width: 100%;
         }
       }
+
+      & > .fileOption {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
+
+  @media(min-width: 768px) {
+    fieldset {
+      & .drop-product-container {
+        & > .fileOption {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
 `
 
 export const StyledAdmProduct = styled.div`
