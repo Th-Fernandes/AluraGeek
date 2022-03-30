@@ -2,7 +2,7 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledProductForm = styled.form`
-padding-top: 1.6rem;  
+padding: 1.6rem 0;  
 
 fieldset {
     border: none;
@@ -17,28 +17,31 @@ fieldset {
     & .drop-product-container {
       height: 13.4rem;
 
-      & > input {
-        position: relative;
-        top: -134px;
-        opacity: 0;
+      & > .drop-product-content {
         height: 13.4rem;
-        width: 100%;
-      }
-  
-      & > label {
-      background-color: ${colors.neutrals["white"]};
-      height: 13.4rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      text-align: center;
-      align-content: center;
-      border: 2px dashed ${colors.neutrals["black-200"]};
-  
-        & > p {
-          margin-top: 2.2rem;
+        & > input {
+          position: relative;
+          top: -134px;
+          opacity: 0;
+          height: 13.4rem;
           width: 100%;
         }
+    
+        & > label {
+        background-color: ${colors.neutrals["white"]};
+        height: 13.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        border: 2px dashed ${colors.neutrals["black-200"]};
+    
+          & > p {
+            margin-top: 2.2rem;
+            width: 100%;
+          }
+      }
       }
 
       & > .fileOption {
@@ -50,15 +53,66 @@ fieldset {
   }
 
   @media(min-width: 768px) {
+    padding: 3.2rem 0;  
+
     fieldset {
+      margin: 0 3.2rem ;
       & .drop-product-container {
+        height: 15.2rem;
+        display: flex;
+        align-items: center; 
+
+        & .drop-product-content {
+          height: 15.2rem;
+          width: 25.4rem;
+
+          & > label {
+            height: 15.2rem;
+          }
+
+          & > input {
+            height: 15.2rem;
+            top: -15.2rem;
+          }
+        }
+
         & > .fileOption {
+          
           display: block;
           opacity: 1;
           visibility: visible;
+
+          & > span {
+            margin-inline: 0.8rem; 
+            font-size: 1.6rem;
+          }
+
+          & .fileSearchButton {
+            width: 23.9rem;
+            height: 5.1rem;
+            border: 1px solid ${colors.primary["blue"]};
+            color: ${colors.primary["blue"]};
+            font-size: 1.6rem;
+          }
         }
       }
     }
+
+  @media(min-width: 1024px) {
+    padding: 6.4rem 0;  
+
+
+    fieldset {
+      max-width: 55.9rem;
+      margin: 0 auto;
+
+      & .drop-product-container {
+        & .drop-product-content {
+          width: 28.2rem;
+        }
+      }
+    }
+  }
 `
 
 export const StyledAdmProduct = styled.div`
