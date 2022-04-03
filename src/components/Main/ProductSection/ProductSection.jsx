@@ -2,7 +2,10 @@ import { StyledProducts } from "./styles";
 import arrowIcon from "img/arrow.svg";
 import React from "react";
 import { useRouter } from 'next/router'
+import te2 from "../../../../public/img/console/unsplash_ZV7lnfyQLmA.svg"
+import Image from 'next/image'
 
+console.log(te2.src)
 export default function ProductSection(props) {
   const router = useRouter()
 
@@ -10,7 +13,9 @@ export default function ProductSection(props) {
   
   const renderProducts = (quantity) => {
     for(let i = 0; i <= (quantity - 1); i++) {
+      
       products.push(props.productData[i])
+      
     }
   }
 
@@ -20,7 +25,7 @@ export default function ProductSection(props) {
 
   return (
     <StyledProducts>
-      {renderProducts(4)}
+      {renderProducts(6)}
       <div className="products-container">
       <header>
         <h2>{props.title}</h2>
@@ -34,9 +39,13 @@ export default function ProductSection(props) {
       <ul className="products">
         {
           products.map((element, index) => {
+            console.log(element.name)
             return  (
               <li className="product" key={index}>
-                <img 
+                
+                <Image
+                  width={176}
+                  height={174}
                   src={element.thumb} 
                   alt={element.alt} 
                 />
@@ -45,7 +54,7 @@ export default function ProductSection(props) {
                   <p className="product-name">{element.name}</p>
                   <p className="product-price">{element.price}</p>
                   <a 
-                    onClick={() => router.push('./product')}
+                    onClick={() => router.push(`./product?=${element.name}`)}
                   > ver tudo </a>
                 </span>
               </li>

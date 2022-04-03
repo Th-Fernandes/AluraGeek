@@ -1,0 +1,132 @@
+{
+    "products": [
+        {
+            "starwars": [
+                {
+                    "name": "Luminária Star Wars",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.3118a674.svg",
+                    "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+                },
+                {
+                    "name": "Action figure Darth Vader",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/unsplash_epRFE_hBNjo.c70446df.svg",
+                    "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+                },
+                {
+                    "name": "Exemplo 3",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/unsplash_KeGToDVN0l4.f656128a.svg",
+                    "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+                },
+                {
+                    "name": "Luminária Star Wars",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/unsplash_4OHkK555s1A.f87ff6dc.svg",
+                    "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+                },
+                {
+                    "name": "Luminária Star Wars",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/unsplash_R8L1l9RN198.d31f0f69.svg",
+                    "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+                },
+                {
+                    "name": "Luminária Star Wars",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/unsplash_1VV1MRafd7A.533e1691.svg",
+                    "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+                }
+            ]
+        },
+
+        {
+            "console": [
+                {
+                    "name": "Controle X-box",
+                    "price": "R$: 560,00",
+                    "thumb": "/_next/static/media/unsplash_0POwK6iAiRQ.df108cf0.svg",
+                    "alt": "Imagem do produto: console z-box"
+                },
+                {
+                    "name": "PS5",
+                    "price": "R$: 5999,90",
+                    "thumb": "/_next/static/media/unsplash_caNzzoxls8Q.69ff0fa2.svg",
+                    "alt": "Imagem do produto: console z-box"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/unsplash_ZV7lnfyQLmA.68f7d4ab.svg",
+                    "alt": "Imagem do produto: console z-box"
+                },
+                {
+                    "name": "example 04",
+                    "price": "R$: 999,90",
+                    "thumb": "/_next/static/media/unsplash_k-xYhI3-gJM.07646321.svg",
+                    "alt": "Imagem do produto: console z-box"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 4999,90",
+                    "thumb": "/_next/static/media/unsplash_Zjn4dT993-g.bc9bbb93.svg",
+                    "alt": "Imagem do produto: console z-box"
+                },
+                {
+                    "name": "example 06",
+                    "price": "R$: 120,00",
+                    "thumb": "/_next/static/media/unsplash_k-xYhI3-gJM.07646321.svg",
+                    "alt": "Imagem do produto: console z-box"
+                }
+            ]
+        },
+
+        {
+            "diversos": [
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "alt": "Imagem do produto: poster"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "alt": "Imagem do produto: poster"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "alt": "Imagem do produto: poster"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "alt": "Imagem do produto: poster"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "alt": "Imagem do produto: poster"
+                },
+                {
+                    "name": "example 01",
+                    "price": "R$: 60,00",
+                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "alt": "Imagem do produto: poster"
+                }
+            ]
+        }
+    ]
+}
