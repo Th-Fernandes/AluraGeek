@@ -4,43 +4,43 @@
             "starwars": [
                 {
                     "name": "Luminária Star Wars",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.3118a674.svg",
+                    "price": "R$: 199,90",
+                    "thumb": "/images/star-wars-product.svg",
                     "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
                     "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
                 },
                 {
                     "name": "Action figure Darth Vader",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/unsplash_epRFE_hBNjo.c70446df.svg",
+                    "price": "R$: 239,90",
+                    "thumb": "/images/unsplash_epRFE_hBNjo.svg",
                     "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
                     "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
                 },
                 {
-                    "name": "Exemplo 3",
+                    "name": "Action figure mestre Yoda",
                     "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/unsplash_KeGToDVN0l4.f656128a.svg",
+                    "thumb": "/images/unsplash_KeGToDVN0l4.svg",
                     "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
                     "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
                 },
                 {
-                    "name": "Luminária Star Wars",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/unsplash_4OHkK555s1A.f87ff6dc.svg",
+                    "name": "Exemplo 04",
+                    "price": "R$: 369,60",
+                    "thumb": "/images/unsplash_4OHkK555s1A.svg",
                     "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
                     "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
                 },
                 {
-                    "name": "Luminária Star Wars",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/unsplash_R8L1l9RN198.d31f0f69.svg",
+                    "name": "Boneco baby Yoda",
+                    "price": "R$: 349,90",
+                    "thumb": "/images/unsplash_R8L1l9RN198.svg",
                     "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
                     "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
                 },
                 {
-                    "name": "Luminária Star Wars",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/unsplash_1VV1MRafd7A.533e1691.svg",
+                    "name": "Exemplo 05",
+                    "price": "R$: 199,90",
+                    "thumb": "/images/unsplash_1VV1MRafd7A.svg",
                     "alt": "Imagem do produto: luminária personalizada no formato do capacete de um Stormtrooper",
                     "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
                 }
@@ -52,38 +52,38 @@
                 {
                     "name": "Controle X-box",
                     "price": "R$: 560,00",
-                    "thumb": "/_next/static/media/unsplash_0POwK6iAiRQ.df108cf0.svg",
-                    "alt": "Imagem do produto: console z-box"
+                    "thumb": "/images/console/unsplash_0POwK6iAiRQ.svg",
+                    "alt": "Imagem do produto: controle de x-box na cor branca."
                 },
                 {
                     "name": "PS5",
                     "price": "R$: 5999,90",
-                    "thumb": "/_next/static/media/unsplash_caNzzoxls8Q.69ff0fa2.svg",
-                    "alt": "Imagem do produto: console z-box"
+                    "thumb": "/images/console/unsplash_caNzzoxls8Q.svg",
+                    "alt": "Imagem do produto: console playstation 5 na cor preta. Acompanha controle na cor branca."
                 },
                 {
-                    "name": "example 01",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/unsplash_ZV7lnfyQLmA.68f7d4ab.svg",
-                    "alt": "Imagem do produto: console z-box"
-                },
-                {
-                    "name": "example 04",
+                    "name": "NES",
                     "price": "R$: 999,90",
-                    "thumb": "/_next/static/media/unsplash_k-xYhI3-gJM.07646321.svg",
-                    "alt": "Imagem do produto: console z-box"
+                    "thumb": "/images/console/unsplash_ZV7lnfyQLmA.svg",
+                    "alt": "Imagem do produto: console retrô nintendo NES. Caixa lacrada."
                 },
                 {
-                    "name": "example 01",
-                    "price": "R$: 4999,90",
-                    "thumb": "/_next/static/media/unsplash_Zjn4dT993-g.bc9bbb93.svg",
-                    "alt": "Imagem do produto: console z-box"
+                    "name": "nintendo GameBoy",
+                    "price": "R$: 499,90",
+                    "thumb": "/images/console/unsplash_k-xYhI3-gJM.svg",
+                    "alt": "Imagem do produto: console nintendo gameBoy personalizado com as cores camufladas do uniforme militar. "
                 },
                 {
-                    "name": "example 06",
-                    "price": "R$: 120,00",
-                    "thumb": "/_next/static/media/unsplash_k-xYhI3-gJM.07646321.svg",
-                    "alt": "Imagem do produto: console z-box"
+                    "name": "X-box series S",
+                    "price": "R$: 2999,90",
+                    "thumb": "/images/console/unsplash_Zjn4dT993-g.svg",
+                    "alt": "Imagem do produto: console x-box series S na cor preta. Não acompanha controle."
+                },
+                {
+                    "name": "Nintendo Switch",
+                    "price": "R$: 2890,90",
+                    "thumb": "/images/console/unsplash_wa5z9o9fgjw.svg",
+                    "alt": "Imagem do produto: console nintendo switch nas cores azul e vermelha."
                 }
             ]
         },
@@ -91,40 +91,40 @@
         {
             "diversos": [
                 {
-                    "name": "example 01",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
-                    "alt": "Imagem do produto: poster"
+                    "name": "camisa Atari",
+                    "price": "R$: 89,90",
+                    "thumb": "/images/diversos/unsplash_fMP-oCze3AY.svg",
+                    "alt": "Imagem do produto: camisa na cor branca. estampa: logotipo da atari em vermelho acompanhado de letras em japonês na cor preta."
+                },
+                {
+                    "name": "camisa SNES",
+                    "price": "R$: 89,90",
+                    "thumb": "/images/diversos/unsplash_bUgaIaZysH0.svg",
+                    "alt": "Imagem do produto: camisa SNES cor cinza. estampa da blusa: controle do SNES na cor preta."
                 },
                 {
                     "name": "example 01",
                     "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
+                    "thumb": "/images/diversos/unsplash_sYVY_ZKwaxU.svg",
                     "alt": "Imagem do produto: poster"
                 },
                 {
-                    "name": "example 01",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
-                    "alt": "Imagem do produto: poster"
+                    "name": "despertador retrô",
+                    "price": "R$: 199,90",
+                    "thumb": "/images/diversos/unsplash_jMT6BrgBuXU.svg",
+                    "alt": "Imagem do produto: despertador rosa retrô no estilo dos anos 80"
+                },  
+                {
+                    "name": "Óculos VR",
+                    "price": "R$: 1199,60",
+                    "thumb": "/images/diversos/unsplash_MxVkWPiJALs.svg",
+                    "alt": "Imagem do produto: Óculos de realidade virtual na cor branca e leds azuis ao redor do óculos."
                 },
                 {
-                    "name": "example 01",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
-                    "alt": "Imagem do produto: poster"
-                },
-                {
-                    "name": "example 01",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
-                    "alt": "Imagem do produto: poster"
-                },
-                {
-                    "name": "example 01",
-                    "price": "R$: 60,00",
-                    "thumb": "/_next/static/media/star-wars-product.051297c0.svg",
-                    "alt": "Imagem do produto: poster"
+                    "name": "fantasia pikachu",
+                    "price": "R$: 199,90",
+                    "thumb": "/images/diversos/unsplash_r27umXAelDc.svg",
+                    "alt": "Imagem do produto: fantasia do pikachu"
                 }
             ]
         }

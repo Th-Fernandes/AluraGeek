@@ -2,10 +2,8 @@ import { StyledProducts } from "./styles";
 import arrowIcon from "img/arrow.svg";
 import React from "react";
 import { useRouter } from 'next/router'
-import te2 from "../../../../public/img/console/unsplash_ZV7lnfyQLmA.svg"
 import Image from 'next/image'
 
-console.log(te2.src)
 export default function ProductSection(props) {
   const router = useRouter()
 
@@ -54,7 +52,7 @@ export default function ProductSection(props) {
                   <p className="product-name">{element.name}</p>
                   <p className="product-price">{element.price}</p>
                   <a 
-                    onClick={() => router.push(`./product?=${element.name}`)}
+                    onClick={() => router.push(`./product?name=${element.name}`)}
                   > ver tudo </a>
                 </span>
               </li>
