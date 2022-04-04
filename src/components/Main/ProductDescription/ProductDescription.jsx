@@ -1,8 +1,9 @@
 import { StyledProductDesc } from "./styles";
 import React from "react";
 
-export default function ProductDescription () {
+export default function ProductDescription (props) {
   const [data, setData] = React.useState(undefined)
+  //const [product, setProduct] = React.useState()
 
   React.useEffect(() => {
     receaveData()
@@ -18,15 +19,20 @@ export default function ProductDescription () {
       }) 
   }
 
+  console.log( props.productData.name )
+
+  
   return (
-    <StyledProductDesc>
+    <StyledProductDesc
+      productThumb={props.productData.thumb}
+    >
       <div className="product-thumb"></div>
 
        <article>
-        {data && <h1>{data[0].starwars[0].name}</h1>}
-        {data && <span className="preco">{data[0].starwars[0].price}</span>}
+         <h1>{props.productData.name}</h1>
+        <span className="preco">{props.productData.price}</span>
 
-        {data && <p>{data[0].starwars[0].description}</p>}
+        <p>{props.productData.description}</p>
       </article> 
     </StyledProductDesc>
   )

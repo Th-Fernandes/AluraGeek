@@ -7,15 +7,30 @@ export default function UserContactData() {
 
   const handleInputChange = (element) => {
     const charQuantity = element.target.value.length;
-    if (charQuantity > 0) setButton(false)
+    
+    if (charQuantity > 0) {
+      const removeErrorBorder = element.target.parentNode.classList.remove('error')
+      const RemoveErrorMessage = document.querySelector('small').classList.remove("error-message")
+      setButton(false)
+      return
+    }
+
+    const addErrorBorder = element.target.parentNode.classList.add('error')
+    const addErrorMessage = document.querySelector('small').classList.add("error-message")
+    
+    setButton(true)
   }
 
   return (
     <StyledUserData
-      onSubmit={event => event.preventDefault()}
+      onSubmit={event => {
+        event.preventDefault()
+        alert('Sua mensagem foi enviada com sucesso. Obrigado pelo contato.')
+      }}
     >
       <fieldset>
         <legend>Fale conosco</legend>
+        <small >ops! parece que você deixou campos em branco.</small>
 
         <p className="username-container">
           <label htmlFor="username">Nome</label>
@@ -24,8 +39,7 @@ export default function UserContactData() {
             id='username' 
             maxLength='40'
             onChange={(element) => {
-              const charQuantity = element.target.value.length;
-              if (charQuantity > 0) setButton(false)
+              handleInputChange(element)
             }}
             required
             />
@@ -38,6 +52,9 @@ export default function UserContactData() {
             id='userMessage' 
             placeholder="Escreva sua mensagem" 
             maxLength='120'
+            onChange={(element) => {
+              handleInputChange(element)
+            }}
             required 
           />
         </p>

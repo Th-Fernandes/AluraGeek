@@ -8,10 +8,12 @@ import Head from 'next/head';
 
 export default function ProductPage() {
 
+  const [product, setProduct] = React.useState()
+
   React.useEffect(() => {
     const getUrlProductName = () => {
-      const querySting = location.search
-      const url = new URLSearchParams(querySting)
+      const queryString = location.search
+      const url = new URLSearchParams(queryString)
       return url.get('name')
     }
 
@@ -20,6 +22,24 @@ export default function ProductPage() {
         .then(async response => {
           const dataProduct = await response.json()
           const productTitle = getUrlProductName()
+
+          // console.log(dataProduct)
+          let index = 0
+          for(let product of dataProduct) {
+            const productType = ['starwars','console', 'diversos']
+            const selectedProducts =  product[ productType[index] ]
+            
+            for(let selectedProduct of selectedProducts) {
+              if(selectedProduct.name === productTitle) {
+                console.log(selectedProduct)
+                setProduct(selectedProduct)
+              }
+            }
+           
+
+            index++
+          }
+
           console.log(dataProduct[1]['console'][0].name)
           setData(dataProduct)
         })
@@ -40,7 +60,12 @@ export default function ProductPage() {
       <Header />
 
       <main style={{ backgroundColor: "#E5E5E5" }}>
-        <ProductDescription />
+        {
+          product &&
+          <ProductDescription 
+          productData={product}
+        />
+        }
         {/*<SimilarProducts /> */}
       </main>
 

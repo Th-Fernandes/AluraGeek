@@ -53,37 +53,49 @@
                     "name": "Controle X-box",
                     "price": "R$: 560,00",
                     "thumb": "/images/console/unsplash_0POwK6iAiRQ.svg",
-                    "alt": "Imagem do produto: controle de x-box na cor branca."
+                    "alt": "Imagem do produto: controle de x-box na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "PS5",
                     "price": "R$: 5999,90",
                     "thumb": "/images/console/unsplash_caNzzoxls8Q.svg",
-                    "alt": "Imagem do produto: console playstation 5 na cor preta. Acompanha controle na cor branca."
+                    "alt": "Imagem do produto: console playstation 5 na cor preta. Acompanha controle na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "NES",
                     "price": "R$: 999,90",
                     "thumb": "/images/console/unsplash_ZV7lnfyQLmA.svg",
-                    "alt": "Imagem do produto: console retrô nintendo NES. Caixa lacrada."
+                    "alt": "Imagem do produto: console retrô nintendo NES. Caixa lacrada.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "nintendo GameBoy",
                     "price": "R$: 499,90",
                     "thumb": "/images/console/unsplash_k-xYhI3-gJM.svg",
-                    "alt": "Imagem do produto: console nintendo gameBoy personalizado com as cores camufladas do uniforme militar. "
+                    "alt": "Imagem do produto: console nintendo gameBoy personalizado com as cores camufladas do uniforme militar. ",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "X-box series S",
                     "price": "R$: 2999,90",
                     "thumb": "/images/console/unsplash_Zjn4dT993-g.svg",
-                    "alt": "Imagem do produto: console x-box series S na cor preta. Não acompanha controle."
+                    "alt": "Imagem do produto: console x-box series S na cor preta. Não acompanha controle.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "Nintendo Switch",
                     "price": "R$: 2890,90",
                     "thumb": "/images/console/unsplash_wa5z9o9fgjw.svg",
-                    "alt": "Imagem do produto: console nintendo switch nas cores azul e vermelha."
+                    "alt": "Imagem do produto: console nintendo switch nas cores azul e vermelha.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 }
             ]
         },
@@ -94,37 +106,49 @@
                     "name": "camisa Atari",
                     "price": "R$: 89,90",
                     "thumb": "/images/diversos/unsplash_fMP-oCze3AY.svg",
-                    "alt": "Imagem do produto: camisa na cor branca. estampa: logotipo da atari em vermelho acompanhado de letras em japonês na cor preta."
+                    "alt": "Imagem do produto: camisa na cor branca. estampa: logotipo da atari em vermelho acompanhado de letras em japonês na cor preta.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "camisa SNES",
                     "price": "R$: 89,90",
                     "thumb": "/images/diversos/unsplash_bUgaIaZysH0.svg",
-                    "alt": "Imagem do produto: camisa SNES cor cinza. estampa da blusa: controle do SNES na cor preta."
+                    "alt": "Imagem do produto: camisa SNES cor cinza. estampa da blusa: controle do SNES na cor preta.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "example 01",
                     "price": "R$: 60,00",
                     "thumb": "/images/diversos/unsplash_sYVY_ZKwaxU.svg",
-                    "alt": "Imagem do produto: poster"
+                    "alt": "Imagem do produto: poster",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "despertador retrô",
                     "price": "R$: 199,90",
                     "thumb": "/images/diversos/unsplash_jMT6BrgBuXU.svg",
-                    "alt": "Imagem do produto: despertador rosa retrô no estilo dos anos 80"
+                    "alt": "Imagem do produto: despertador rosa retrô no estilo dos anos 80",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },  
                 {
                     "name": "Óculos VR",
                     "price": "R$: 1199,60",
                     "thumb": "/images/diversos/unsplash_MxVkWPiJALs.svg",
-                    "alt": "Imagem do produto: Óculos de realidade virtual na cor branca e leds azuis ao redor do óculos."
+                    "alt": "Imagem do produto: Óculos de realidade virtual na cor branca e leds azuis ao redor do óculos.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 },
                 {
                     "name": "fantasia pikachu",
                     "price": "R$: 199,90",
                     "thumb": "/images/diversos/unsplash_r27umXAelDc.svg",
-                    "alt": "Imagem do produto: fantasia do pikachu"
+                    "alt": "Imagem do produto: fantasia do pikachu",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
                 }
             ]
         }

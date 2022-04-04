@@ -13,6 +13,22 @@ export const StyledUserData = styled.form`
       margin-bottom: 0.8rem;
     }
 
+    & > small {
+      display: inline-block;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: red;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+
+      &.error-message {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+    } 
+
     & .username-container {
       background-color: ${colors.neutrals["white"]};
       height: 5.6rem;
@@ -26,6 +42,10 @@ export const StyledUserData = styled.form`
         font-size: 1.6rem;
         color: ${colors.primary["black"]};
       }
+    }
+
+    .error {
+      animation: error 1.5s infinite;
     }
 
     & .user-message {
@@ -54,10 +74,33 @@ export const StyledUserData = styled.form`
     color: ${colors.neutrals["white"]};
     width: 16.5rem;
     height: 5.1rem;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
 
   @media(max-width: 425px) {
     padding: 0  0.8rem; 
   }
 
+  @keyframes error {
+    25% {
+      outline: 2px solid red;
+      
+    }
+
+    50% {
+      outline: none;
+    }
+
+    75% {
+      outline: 2px solid red;
+    }
+
+    100% {
+      outline: none
+    }
+  }
 `

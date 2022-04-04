@@ -5,7 +5,7 @@ export const StyledProductDesc = styled.section`
   > .product-thumb {
     width: 100%;
     height: 19.2rem;
-    background: url(${product.src}) no-repeat center;
+    background: url(${props => props.productThumb}) no-repeat center;
     background-size: cover;
   }
 
