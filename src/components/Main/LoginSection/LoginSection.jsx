@@ -1,6 +1,7 @@
 import {StyledLogin} from "./styles.js"
 import React from "react";
 import { useRouter } from 'next/router'
+import { loginController } from "controller/isLogged"
 
 export default function LoginSection() {
   const [loginData, setLoginData] = React.useState()
@@ -42,6 +43,8 @@ export default function LoginSection() {
             const passwordCondition = inputData.password  === login.password
             
             if(loginCondition && passwordCondition) {
+              loginController.loggedUser = inputData
+              console.log(loginController.userInfo)
               router.push('./admin')
             }         
           } 

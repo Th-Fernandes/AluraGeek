@@ -1,4 +1,4 @@
-export class IsLogged {
+ class IsLogged {
   constructor(user) {
     this.user = user;
   }
@@ -11,3 +11,6 @@ export class IsLogged {
     this.user = user
   }
 }
+
+const loginController = new IsLogged()
+export {loginController}
