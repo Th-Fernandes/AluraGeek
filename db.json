@@ -152,5 +152,16 @@
                 }
             ]
         }
+    ],
+
+    "users" : [
+        {
+            "email": "thiagofernandes@gmail.com",
+            "password": "123"
+        },
+        {
+            "email": "thiagocarvalho@gmail.com",
+            "password": "frontenddev123"
+        }
     ]
 }

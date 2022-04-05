@@ -25,6 +25,7 @@ export default function UserContactData() {
     <StyledUserData
       onSubmit={event => {
         event.preventDefault()
+        
         alert('Sua mensagem foi enviada com sucesso. Obrigado pelo contato.')
       }}
     >

@@ -26,17 +26,17 @@ export default function ProductPage() {
           // console.log(dataProduct)
           let index = 0
           for(let product of dataProduct) {
+            // nome dos objetos do servidor
             const productType = ['starwars','console', 'diversos']
+            // a cadda varredura do for, acessa um objeto diferente
             const selectedProducts =  product[ productType[index] ]
-            
+            // após acessar o objeto, verifica se o método name é igual a query string na url
             for(let selectedProduct of selectedProducts) {
               if(selectedProduct.name === productTitle) {
                 console.log(selectedProduct)
                 setProduct(selectedProduct)
               }
             }
-           
-
             index++
           }
 

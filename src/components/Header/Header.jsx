@@ -6,6 +6,7 @@ import { StyledHeader } from "./styles";
 import React from 'react';
 import searchIcon from "img/lupa-preta.svg";
 import { useRouter } from "next/dist/client/router";
+import { IsLogged } from "controller/isLogged";
 
 export default function Header(props) {
   const router = useRouter()
@@ -28,6 +29,9 @@ export default function Header(props) {
       logoSize()
     })
   }, [])
+
+  const test = new IsLogged()
+  console.log(test.loggedUser = {name: 'Fulano da Tilva', password: '123'})
 
   return (
     <StyledHeader>

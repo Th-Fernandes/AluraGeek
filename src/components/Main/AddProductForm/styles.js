@@ -121,6 +121,16 @@ export const StyledAdmProduct = styled.div`
   & > div {
     padding: 0.8rem 1.2rem;
     background-color: ${colors.neutrals["white"]};
+
+    &:last-child {
+      height: 8.2rem;
+      
+      & > input {
+        height: 100%;
+        max-width: 100%;
+        word-break: break-all;
+      }
+    }
   }
 
   & > div:not(:first-child) { 

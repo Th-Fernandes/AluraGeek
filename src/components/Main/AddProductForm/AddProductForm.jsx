@@ -7,6 +7,13 @@ import defaultImgIcon from "img/img-icon.svg"
 export default function AddProductForm() {
 
   const [defaultImg, setDefaultImg] = React.useState(crossIcon.src)
+  const [inputUser, setInputUser] = React.useState()
+
+  const handleInputUser = (element, inputName) => {
+    const inputValue = element.target.value
+    setInputUser({...inputUser, [inputName]: inputValue})
+    console.log(inputUser)
+  }
 
   React.useEffect(() => {
     // muda o ícone da sessão de dropar arquivo dependendo do tamanho da tela
@@ -24,11 +31,14 @@ export default function AddProductForm() {
     window.addEventListener('resize', () => {
       changeIcon()
     })
-}, [])
+  }, [])
 
   return (
     <StyledProductForm
-      onSubmit={event => event.preventDefault()}
+      onSubmit={event => {
+        event.preventDefault()
+        console.log(inputUser)
+      }}
     >
       <fieldset>
         <legend>Adicionar novo produto</legend>
@@ -50,14 +60,27 @@ export default function AddProductForm() {
 
         <StyledAdmProduct className="adm-product-info">
           <div>
-            <InputContent label="Nome do produto" inputId="productNameAdm" inputType="text"/>
+            <InputContent 
+              onChange={element => handleInputUser(element, 'name')}
+              label="Nome do produto" 
+              inputId="productNameAdm" 
+              inputType="text"/>
           </div>
           <div>
-            <InputContent label="Preço do produto" inputId="productPriceAdm" inputType="number"/>
+            <InputContent 
+              onChange={element => handleInputUser(element, 'price')}
+              label="Preço do produto" 
+              inputId="productPriceAdm" 
+              inputType="number"/>
           </div>
 
           <div>
-            <InputContent label=" " inputId="ProductDescAdm" inputType="text" placeholder="Descrição do produto"/>
+            <InputContent 
+            onChange={element => handleInputUser(element, 'description')}
+              label=" " 
+              inputId="ProductDescAdm" 
+              inputType="text" 
+              placeholder="Descrição do produto"/>
           </div>
         </StyledAdmProduct>
 

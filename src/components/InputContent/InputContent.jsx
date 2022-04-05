@@ -19,6 +19,7 @@ export default function InputContent(props) {
       </StyledLabel>
 
       <StyledInput
+        onChange={props.onChange}
         type={verifyProps(props.inputType)} 
         id={verifyProps(props.inputId)}
         placeholder={props.placeholder} 
