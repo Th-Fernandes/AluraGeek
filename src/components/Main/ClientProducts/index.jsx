@@ -12,8 +12,11 @@ export default function ClientProducts() {
 
       <ProductSection
         title=''
-        productData={loginController.userInfo.products}
+        productData={loginController.userInfo}
       />
+
+
+      {console.log(loginController.userInfo.items)}
 
     </StyledClientSec>
   )

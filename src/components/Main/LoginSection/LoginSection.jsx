@@ -18,7 +18,7 @@ export default function LoginSection() {
 
   
   React.useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('http://localhost:5001/users')
       .then( async function(response) {
         const data = await response.json()
         setLoginData(data)

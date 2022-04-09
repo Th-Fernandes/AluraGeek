@@ -9,6 +9,7 @@ import Head from 'next/head';
 export default function ProductPage() {
 
   const [product, setProduct] = React.useState()
+  const [data, setData] = React.useState(undefined)
 
   React.useEffect(() => {
     const getUrlProductName = () => {
@@ -18,38 +19,29 @@ export default function ProductPage() {
     }
 
     const receaveData = () => {
-      fetch('http://localhost:5000/products')
-        .then(async response => {
+
+      fetch('http://localhost:5001/products')
+        .then( async response => {
           const dataProduct = await response.json()
-          const productTitle = getUrlProductName()
+          const urlTitle = getUrlProductName()
 
-          // console.log(dataProduct)
-          let index = 0
-          for(let product of dataProduct) {
-            // nome dos objetos do servidor
-            const productType = ['starwars','console', 'diversos']
-            // a cadda varredura do for, acessa um objeto diferente
-            const selectedProducts =  product[ productType[index] ]
-            // após acessar o objeto, verifica se o método name é igual a query string na url
-            for(let selectedProduct of selectedProducts) {
-              if(selectedProduct.name === productTitle) {
-                console.log(selectedProduct)
-                setProduct(selectedProduct)
-              }
+          for(let categorie of dataProduct) {
+            const matchTitle = categorie.items.filter(product => product.name === urlTitle)
+            console.log(categorie)
+            if (matchTitle.length !== 0) {
+              setProduct(...matchTitle)
+              break
             }
-            index++
           }
-
-          console.log(dataProduct[1]['console'][0].name)
           setData(dataProduct)
-        })
+        }) 
     }
 
     receaveData()
     
   }, [])
   
-  const [data, setData] = React.useState(undefined)
+  
 
   return (
     <>

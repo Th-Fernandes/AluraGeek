@@ -20,7 +20,7 @@ export default function SearchBar() {
   }
 
   React.useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('http://localhost:5001/products')
       .then(async response => {
         const data = await response.json()
         setProductsData(data)
