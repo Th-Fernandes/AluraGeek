@@ -39,7 +39,7 @@ export default function Header(props) {
 
       if(urlCondition) {
         const host = window.location.hostname // pega o host
-        router.push(host, '/access/login') 
+        //router.push(host, '/access/login') 
       }
     } else {
       // avisa ao component de botao do header que o usuário está logado, com isso ele pode fazer suas devidas alterações

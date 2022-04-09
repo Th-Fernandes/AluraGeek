@@ -152,16 +152,70 @@
                 }
             ]
         }
-    ],
+     ],
 
     "users" : [
         {
+            "id": 1,
             "email": "thiagofernandes@gmail.com",
-            "password": "123"
+            "password": "123",
+            "products": [
+                {
+                    "name": "Controle X-box",
+                    "price": "R$: 560,00",
+                    "thumb": "/images/console/unsplash_0POwK6iAiRQ.svg",
+                    "alt": "Imagem do produto: controle de x-box na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
+                },
+                {
+                    "name": "PS5",
+                    "price": "R$: 5999,90",
+                    "thumb": "/images/console/unsplash_caNzzoxls8Q.svg",
+                    "alt": "Imagem do produto: console playstation 5 na cor preta. Acompanha controle na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
+                },
+                {
+                    "name": "NES",
+                    "price": "R$: 999,90",
+                    "thumb": "/images/console/unsplash_ZV7lnfyQLmA.svg",
+                    "alt": "Imagem do produto: console retrô nintendo NES. Caixa lacrada.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
+                },
+                {
+                    "name": "Controle X-box",
+                    "price": "R$: 560,00",
+                    "thumb": "/images/console/unsplash_0POwK6iAiRQ.svg",
+                    "alt": "Imagem do produto: controle de x-box na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
+                },
+                {
+                    "name": "Controle X-box",
+                    "price": "R$: 560,00",
+                    "thumb": "/images/console/unsplash_0POwK6iAiRQ.svg",
+                    "alt": "Imagem do produto: controle de x-box na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
+                },
+                {
+                    "name": "Controle X-box",
+                    "price": "R$: 560,00",
+                    "thumb": "/images/console/unsplash_0POwK6iAiRQ.svg",
+                    "alt": "Imagem do produto: controle de x-box na cor branca.",
+                    "description": "Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam"
+
+                }
+            ]
         },
         {
+            "id": 2,
             "email": "thiagocarvalho@gmail.com",
             "password": "frontenddev123"
         }
     ]
+
+    
 }

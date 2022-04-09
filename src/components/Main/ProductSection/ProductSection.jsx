@@ -6,60 +6,81 @@ import Image from 'next/image'
 
 export default function ProductSection(props) {
   const router = useRouter()
+  const [productsQuantity, setProductsQuantity] = React.useState(4)
 
   const products = []
-  
+
   const renderProducts = (quantity) => {
-    for(let i = 0; i <= (quantity - 1); i++) {
-      
-      products.push(props.productData[i])
-      
+    for (let i = 0; i <= (quantity - 1); i++) {
+
+      products.push(props.productData.items[i])
+      //console.log(products)
     }
   }
 
   React.useEffect(() => {
-    console.log(window.innerWidth)
+    let time = null
+   
+    const productRender = () => {
+      if( window.innerWidth < 1180) {
+        setProductsQuantity(4)
+        return
+      }
+  
+      setProductsQuantity(6)
+    }
+
+    productRender()
+
+
+    window.addEventListener('resize', () => {
+      clearTimeout(time)
+
+      time = setTimeout(() => {
+        productRender()
+      }, 200)
+    })
+
+    
   }, [])
 
   return (
     <StyledProducts>
-      {renderProducts(6)}
+      {renderProducts(productsQuantity)}
       <div className="products-container">
-      <header>
-        <h2>{props.title}</h2>
+        <header>
+          <h2>{props.title}</h2>
 
-        <span className="all-products-link">
-          <a href="#">Ver tudo</a>
-          <img src={arrowIcon.src} alt={`Selecione essa opção para ver todos os produtos sobre ${props.title}`} />
-        </span>
-      </header>
+          <span className="all-products-link">
+            <a href="#">Ver tudo</a>
+            <img src={arrowIcon.src} alt={`Selecione essa opção para ver todos os produtos sobre ${props.title}`} />
+          </span>
+        </header>
 
-      <ul className="products">
-        {
-          products.map((element, index) => {
-            console.log(element.name)
-            return  (
-              <li className="product" key={index}>
-                
-                <Image
-                  width={176}
-                  height={174}
-                  src={element.thumb} 
-                  alt={element.alt} 
-                />
-        
-                <span className="product-description">
-                  <p className="product-name">{element.name}</p>
-                  <p className="product-price">{element.price}</p>
-                  <a 
-                    onClick={() => router.push(`./product?name=${element.name}`)}
-                  > ver tudo </a>
-                </span>
-              </li>
-            )
-          })
-        }
-      </ul>
+        <ul className="products">
+          {
+            products.map((element, index) => {
+              //console.log(element)
+              return (
+                <li className="product" key={index}>
+
+                  <img
+                    src={element.thumb}
+                    alt={element.alt}
+                  />
+
+                  <span className="product-description">
+                    <p className="product-name">{element.name}</p>
+                    <p className="product-price">{element.price}</p>
+                    <a
+                      onClick={() => router.push(`./product?name=${element.name}`)}
+                    > ver tudo </a>
+                  </span>
+                </li>
+              )
+            })
+          }
+        </ul>
       </div>
     </StyledProducts>
   )

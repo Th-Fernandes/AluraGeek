@@ -39,13 +39,14 @@ export default function LoginSection() {
           event.preventDefault()
 
           for(let login of loginData) {
+
             const loginCondition = inputData.email  === login.email
             const passwordCondition = inputData.password  === login.password
             
             if(loginCondition && passwordCondition) {
-              loginController.loggedUser = inputData
+              loginController.loggedUser = login
               console.log(loginController.userInfo)
-              router.push('./admin')
+              router.push('./products')
             }         
           } 
         }

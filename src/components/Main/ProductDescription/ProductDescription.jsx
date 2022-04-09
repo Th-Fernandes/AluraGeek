@@ -6,18 +6,20 @@ export default function ProductDescription (props) {
   //const [product, setProduct] = React.useState()
 
   React.useEffect(() => {
+    const receaveData = () => {
+      fetch('http://localhost:5000/products')
+        .then(async response => {
+          const dataProduct = await response.json()
+          setData(dataProduct)
+          console.log(dataProduct[0].starwars[0].name)
+        }) 
+    }
+
     receaveData()
 
   }, [])
 
-  const receaveData = () => {
-    fetch('http://localhost:5000/products')
-      .then(async response => {
-        const dataProduct = await response.json()
-        setData(dataProduct)
-        console.log(dataProduct[0].starwars[0].name)
-      }) 
-  }
+  
 
   console.log( props.productData.name )
 

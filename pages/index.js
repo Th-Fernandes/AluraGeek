@@ -9,18 +9,19 @@ export default function Home() {
   const [data, setData] = React.useState(undefined)
 
   React.useEffect(() => {
-    receaveData()
+    const receaveData = () => {
+      fetch('http://localhost:5001/products')
+        .then(async response => {
+          const dataProduct = await response.json()
+          //console.log(dataProduct)
+          setData(dataProduct)
+        }) 
+    }
 
+    receaveData()
   }, [])
 
-  const receaveData = () => {
-    fetch('http://localhost:5000/products')
-      .then(async response => {
-        const dataProduct = await response.json()
-        //console.log(dataProduct)
-        setData(dataProduct)
-      }) 
-  }
+
 
 
   return (
@@ -31,18 +32,16 @@ export default function Home() {
           { 
             data && 
             data.map((element,index) => {
-              console.log()
+              console.log(element)
               return (
                 <ProductSection 
-                  title={( Object.keys( data[index] ) )[0]}
-                  productData={element.starwars || element.console || element.diversos}
+                  title={element.category}
+                  productData={element}
                   key={index}
                 />
               )
             })
           }
-
-
         </main>
       <Footer />
     </>

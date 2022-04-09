@@ -82,33 +82,24 @@ export const StyledProducts = styled.section`
      }
   }
 
-  @media(min-width: 426px) and (max-width: 767px) {
-    & .products {
-      overflow-x: auto;
-    }
-  }
-
-  @media(max-width: 425px) {
-    padding: 3.2rem 1.6rem; 
+  @media(max-width: 450px) {
+    padding: 3.2rem; 
     .products-container {
-      
 
       & .products {
-        grid-template-columns: repeat(2, 19.2rem);
+        grid-template-columns: repeat(2, calc((100vw - 64px) / 2));
+        
 
         & .product {
-          margin: 0 auto;
+          max-width: 14rem;
           & > img {
-            width: 15.6rem;
+            width: 14rem;
+            height: 17.4rem;
           }
         }
       }
     }
   }
 
-  @media(max-width: 380px) {
-    & .products {
-      overflow-x: auto;
-    }
-  }
+  @media(max-width)
 `
