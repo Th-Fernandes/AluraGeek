@@ -58,7 +58,7 @@ export default function Header(props) {
             width={logoDimensions.width}
             height={logoDimensions.height}
           />
-          <SearchBar />
+          <SearchBar searchData={props.searchData} />
         </div>
         <LoginButton adminVer={isLogged || false} />
         {

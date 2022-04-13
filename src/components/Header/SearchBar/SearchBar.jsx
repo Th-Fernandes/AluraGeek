@@ -2,6 +2,7 @@ import { StyledSearchBar } from "./styles";
 import Image from 'next/image';
 import searchIcon from "img/lupa.svg"
 import React from "react";
+import { SearchController } from "controller/SearchRender";
 
 /*
 - searchBar:
@@ -11,7 +12,7 @@ import React from "react";
      imprimir na tela os produtos correspondentes
 */
 
-export default function SearchBar() {
+export default function SearchBar(props) {
   const [searchClick, setSearchClick] = React.useState(false)
   const [productsData, setProductsData] = React.useState()
   //cancelar o comportamento padrão do formulario de atualizar a pag ao dar submit
@@ -24,49 +25,59 @@ export default function SearchBar() {
       .then(async response => {
         const data = await response.json()
         setProductsData(data)
-        
       })
   }, [])
 
+ 
+
   const searchData = (data, input) => {
-    console.log('passei por aqui')
-      const productsCategories = ['starwars', 'console', 'diversos']
-      let index = 0
-      console.log(data)
+    let productos = [];
+    
+    for (let products of data) {
+      //console.log(products)
+      let filterTitle = products.items.map(product => {
+        const findIndex = product.name.indexOf(input)
 
-      for(let category of data) {
-        const products = category[ productsCategories[index] ]
-        products.filter(product => {
-          if(product.name === input) {
-            console.log('compatível')
-          }
-        })
+        if (findIndex >= 0) {
+          return product
+        }
+        return null
+      })
+      //SearchController.pushProducts =  {items: filterTitle}
+       
+      
+      productos.push({items: filterTitle})
 
-        index++
+      if(productos.length > 3) {
+        productos.splice(0, 1)
       }
-  } 
-  
+      console.log(productos)
+      props.searchData(productos)
+      //console.log(SearchController.getProducts) 
+    }
+  }
+
 
   return (
-    <StyledSearchBar 
-      isClicked={searchClick} 
+    <StyledSearchBar
+      isClicked={searchClick}
       onSubmit={handleSubmit}
       onBlur={() => setSearchClick(false)}
     >
       <label htmlFor="barraPesquisa"></label>
-      <input 
+      <input
         onClick={() => setSearchClick(true)}
         onChange={element => {
           const inputValue = element.target.value
           searchData(productsData, inputValue)
         }}
-        
+
         id="barraPesquisa"
         type="text"
         placeholder="O que deseja encontrar?"
       />
 
-      <Image 
+      <Image
         src={searchIcon.src}
         width="17"
         height="17"

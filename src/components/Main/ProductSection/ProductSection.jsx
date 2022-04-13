@@ -11,11 +11,11 @@ export default function ProductSection(props) {
   const products = []
 
   const renderProducts = (quantity) => {
-    for (let i = 0; i <= (quantity - 1); i++) {
-
-      products.push(props.productData.items[i])
-      //console.log(products)
-    }
+      for (let i = 0; i <= (quantity - 1); i++) {
+        const item = props.productData.items[i]
+        
+        if(item) products.push(item)
+      } 
   }
 
   React.useEffect(() => {
@@ -26,7 +26,6 @@ export default function ProductSection(props) {
         setProductsQuantity(4)
         return
       }
-  
       setProductsQuantity(6)
     }
 
