@@ -1,7 +1,9 @@
 import Header from "components/Header/Header.jsx"
 import Footer from "components/Footer/Footer.jsx"
 import React from "react"
- 
+import { supabase } from "../utils/supabaseClient"
+import ProductSection from "components/Main/ProductSection/ProductSection" 
+
 /* 
   OBJETIVO DO DIA: 08/04
   - REFATORAR A PARTE DE PRODUTOS DO DB.JSON
@@ -14,33 +16,35 @@ import React from "react"
 */
 
 export default function () {
-  const [data, setData] = React.useState(undefined)
+  const [productData, setProductData] = React.useState()
 
-  React.useEffect(() => {
-
-    const receaveData = () => {
-      fetch('http://localhost:5001/products')
-        .then(async response => {
-          const dataProduct = await response.json()
-          
-          setData(dataProduct)
-          
-        })
+  React.useEffect(()=> {  
+    async function test() {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+      
+        console.log(data)
+        setProductData(data)
     }
-    receaveData()
-
-    //console.log(ProductData())
-   
+    test()    
   }, [])
 
   return (
     <>
       <Header />
-      {data && data[0].items.map((el, index) => {
-        return <span key={index}>{el.name}</span>
-      }) && console.log(data)}
-      <main>
 
+      <main style={{minHeight: '450px'}}>
+        {
+          productData &&
+          productData.map((element,index) => (
+            <ProductSection 
+              title={element.category}
+              productData={element}
+              key={index}
+            />
+          ))
+        }
       </main>
 
       <Footer />

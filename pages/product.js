@@ -36,7 +36,6 @@ export default function ProductPage() {
           setData(dataProduct)
         }) 
     }
-
     receaveData()
     
   }, [])
