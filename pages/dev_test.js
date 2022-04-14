@@ -18,16 +18,15 @@ import ProductSection from "components/Main/ProductSection/ProductSection"
 export default function () {
   const [productData, setProductData] = React.useState()
 
-  React.useEffect(()=> {  
-    async function test() {
-      const { data, error } = await supabase
+  React.useEffect(async ()=> {  
+  const { data, error } = await supabase
         .from('products')
         .select('*')
       
         console.log(data)
         setProductData(data)
-    }
-    test()    
+
+   
   }, [])
 
   return (
