@@ -6,15 +6,16 @@
 </p>
 
 <h2>O que é esse projeto?</h2>
-<p> Se trata da terceira edição do desafio front-end da alura. O projeto em questão é o AluraGeek: uma plataforma de compra e vendas do universo Geek.</p>
+<p> Se trata da terceira edição do desafio front-end da alura. O projeto em questão é o AluraGeek: uma plataforma de compras e vendas do universo Geek.</p>
 
 <h2> Acesso e Instalação do projeto </h2>
 <p>Você pode acessar o projeto através desse <a href="https://alura-geek-pink.vercel.app/">link</a>.</p>
 <p>Ou se preferir baixar, será necessário instalar as dependências do projeto, rodando yarn install.</p>
 
-<h2>Tecnologias utilizadas</h2>
+<h2>Tecnologias e ferramentas utilizadas</h2>
 
 <ul>
   <li>next.js</li>
   <li>styled components</li>
+  <li>supabase</li>
 </ul>

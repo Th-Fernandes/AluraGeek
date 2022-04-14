@@ -1,7 +1,7 @@
 import Header from "components/Header/Header.jsx"
 import Footer from "components/Footer/Footer.jsx"
 import React from "react"
-import { supabase } from "../utils/supabaseClient"
+import { supabase } from "../src/utils/supabaseClient"
 import ProductSection from "components/Main/ProductSection/ProductSection" 
 
 /* 

@@ -1,47 +1,55 @@
-import Header from "components/Header/Header"
-import Footer from "components/Footer/Footer"
-import ProductDescription from "components/Main/ProductDescription/ProductDescription"
-import React from "react";
 import Head from 'next/head';
-
+import Header from "components/Header/Header"
+import ProductDescription from "components/Main/ProductDescription/ProductDescription"
+import Footer from "components/Footer/Footer"
+import React from "react";
+import { supabase } from "utils/supabaseClient"
 
 
 export default function ProductPage() {
 
   const [product, setProduct] = React.useState()
-  const [data, setData] = React.useState(undefined)
+  //const [data, setData] = React.useState(undefined)
 
-  React.useEffect(() => {
-    const getUrlProductName = () => {
-      const queryString = location.search
-      const url = new URLSearchParams(queryString)
-      return url.get('name')
-    }
+  //função responsável por pegar as informações do produto 
+  //clicado pela query string.só funciona no useEffect pois
+  // é possui funcionalidades do browser
+  const getUrlProductName = () => {
+    const queryString = location.search
+    const url = new URLSearchParams(queryString)
+    console.log(url.get('name'))
+    return url.get('name')
+  }
 
-    const receaveData = () => {
 
-      fetch('http://localhost:5001/products')
-        .then( async response => {
-          const dataProduct = await response.json()
-          const urlTitle = getUrlProductName()
 
-          for(let categorie of dataProduct) {
-            const matchTitle = categorie.items.filter(product => product.name === urlTitle)
-            console.log(categorie)
-            if (matchTitle.length !== 0) {
-              setProduct(...matchTitle)
-              break
-            }
+  React.useEffect( async() => {
+    const { data, error } = await supabase
+      .from('products')
+      .select('*')
+      .then(response => {
+        const dataProduct = response.data
+        const urlProductTitle = getUrlProductName()
+
+        console.log(dataProduct)
+
+        for (let categorie of dataProduct) {
+          const matchTitle = categorie.items.filter(product => 
+            product.name === urlProductTitle
+          )
+
+          if (matchTitle.length !== 0) {
+            setProduct(...matchTitle)
+            console.log(matchTitle)
+            break
           }
-          setData(dataProduct)
-        }) 
-    }
-    receaveData()
-    
+        }
+
+
+        return response.data
+      })
   }, [])
   
-  
-
   return (
     <>
       <Head>

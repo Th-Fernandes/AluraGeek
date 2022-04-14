@@ -2,6 +2,7 @@ import {StyledLogin} from "./styles.js"
 import React from "react";
 import { useRouter } from 'next/router'
 import { loginController } from "controller/isLogged"
+import { supabase } from "utils/supabaseClient"
 
 export default function LoginSection() {
   const [loginData, setLoginData] = React.useState()
@@ -24,6 +25,9 @@ export default function LoginSection() {
         setLoginData(data)
       })
   }, [])
+
+
+
 
   return (
     <section

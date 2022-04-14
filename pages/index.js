@@ -4,7 +4,7 @@ import Banner from "components/Main/Banner/Banner"
 import ProductSection from "components/Main/ProductSection/ProductSection"
 import React from "react";
 import { SearchController } from "controller/SearchRender"
-import { supabase } from "../utils/supabaseClient"
+import { supabase } from "utils/supabaseClient"
 
 
 export default function Home() {

@@ -2,7 +2,7 @@ import { StyledSearchBar } from "./styles";
 import Image from 'next/image';
 import searchIcon from "img/lupa.svg"
 import React from "react";
-import { supabase } from "../../../../utils/supabaseClient"
+import { supabase } from "utils/supabaseClient"
 
 export default function SearchBar(props) {
   const [searchClick, setSearchClick] = React.useState(false)
