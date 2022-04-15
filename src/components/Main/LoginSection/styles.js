@@ -15,6 +15,11 @@ export const StyledLogin = styled.form`
       margin-bottom: 2.4rem;
     }
 
+    & > .auth-error {
+      margin: 0;
+      color: red;
+    }
+
     & > .login-input {
       
       background-color: ${colors.neutrals["white"]};
@@ -49,6 +54,18 @@ export const StyledLogin = styled.form`
       height: 6.2rem;
       font-size: 1.8rem;
       font-weight: 600;
+    }
+
+    & > small {
+      margin-top: 2rem;
+      display: block;
+      font-size: 1.25rem;
+      text-align: center;
+      & > span {
+        color: ${colors.primary['blue']};
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 `

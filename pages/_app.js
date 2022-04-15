@@ -1,6 +1,6 @@
 import {GlobalStyle} from "utils/globalStyle"
 import Head from 'next/head';
-import iconLogo from "img/logo2.svg"
+import iconLogo from "../public/images/general/logo2.svg"
 
 export default function MyApp({ Component, pageProps }) {
   return (

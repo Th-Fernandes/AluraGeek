@@ -1,10 +1,10 @@
-import logo from "img/logo.svg";
+import logo from "../../../public/images/general/logo.svg";
 import Image from 'next/image';
 import LoginButton from "./LoginButton/LoginButton";
 import SearchBar from "./SearchBar/SearchBar";
 import { StyledHeader } from "./styles";
 import React from 'react';
-import searchIcon from "img/lupa-preta.svg";
+import searchIcon from "../../../public/images/general/lupa-preta.svg";
 import { useRouter } from "next/dist/client/router";
 import { loginController } from "controller/isLogged";
 

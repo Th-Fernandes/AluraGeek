@@ -1,12 +1,12 @@
 import {StyledLogin} from "./styles.js"
 import React from "react";
 import { useRouter } from 'next/router'
-import { loginController } from "controller/isLogged"
 import { supabase } from "utils/supabaseClient"
 
 export default function LoginSection() {
-  const [loginData, setLoginData] = React.useState()
   const [inputData, setInputData] = React.useState()
+  const [signType, setSignType] = React.useState('signIn')
+  const [authError, setAuthError] = React.useState()
 
   const router = useRouter()
 
@@ -17,16 +17,16 @@ export default function LoginSection() {
       console.log(inputData)
   }
 
-  
-  React.useEffect(() => {
-    fetch('http://localhost:5001/users')
-      .then( async function(response) {
-        const data = await response.json()
-        setLoginData(data)
-      })
-  }, [])
+  const handleSignIn = async () => {
+    const { error: signInError } = await supabase.auth.signIn(inputData)
+    if (signInError) setAuthError(signInError.message)
+    router.push('../../')
+  }
 
-
+  const handleSignUp = async () => {
+    const {error: signUpError } = await supabase.auth.signUp(inputData)
+    if (signUpError) setAuthError(signUpError.message)
+  }
 
 
   return (
@@ -42,22 +42,22 @@ export default function LoginSection() {
         onSubmit={event => {
           event.preventDefault()
 
-          for(let login of loginData) {
-
-            const loginCondition = inputData.email  === login.email
-            const passwordCondition = inputData.password  === login.password
-            
-            if(loginCondition && passwordCondition) {
-              loginController.loggedUser = login
-              console.log(loginController.userInfo)
-              router.push('./products')
-            }         
-          } 
+          if(signType === 'signIn') handleSignIn()
+          if(signType === 'signUp') handleSignUp()
+          
+          return`operação concluida`
         }
       }
      >
        <fieldset>
-         <legend>Iniciar sessão</legend>
+          {
+            signType === 'signIn' 
+              ? <legend>Iniciar sessão</legend> 
+              : <legend>Criar conta</legend>
+          }
+
+          {authError ? <small className="auth-error">{authError}</small> : null}
+
 
          <p className="login-input">
            <input
@@ -80,6 +80,25 @@ export default function LoginSection() {
          </p>
 
          <button type="submit"> Entrar </button>
+         {
+           signType === 'signIn'
+            ? (
+              <small>Não possui uma conta? 
+                <span onClick={() => setSignType('signUp')}>
+                  crie agora
+                </span>
+              </small>
+            )
+
+            : (
+              <small>Já possui uma conta? 
+                <span onClick={() => setSignType('signIn')}>
+                  faça login aqui.
+                </span>
+              </small>
+            )
+
+         }
        </fieldset>
      </StyledLogin>
     </section>

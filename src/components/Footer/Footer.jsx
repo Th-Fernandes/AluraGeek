@@ -1,5 +1,5 @@
 import { StyledFooter } from "./styles";
-import logo from "img/logo.svg";
+import logo from "../../../public/images/general/logo.svg";
 import Image from "next/image"
 import UserContactData from "./UserContactData/UserContactData";
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from "img/banner.svg";
+import banner from "../../../../public/images/general/banner.svg";
 import colors from "utils/colors.json";
 
 export const StyledBanner = styled.section`

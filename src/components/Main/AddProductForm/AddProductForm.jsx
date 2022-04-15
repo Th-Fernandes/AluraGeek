@@ -1,12 +1,12 @@
 import {StyledProductForm, StyledAdmProduct} from  "./styles";
-import crossIcon from "img/cross.svg";
 import InputContent from "components/InputContent/InputContent";
 import React from "react";
-import defaultImgIcon from "img/img-icon.svg"
+import desktopAddItemIcon from "../../../../public/images/general/desktop-add-item.svg"
+import mobileAddItemIcon from "../../../../public/images/general/mobile-add-item.svg";
 
 export default function AddProductForm() {
 
-  const [defaultImg, setDefaultImg] = React.useState(crossIcon.src)
+  const [defaultImg, setDefaultImg] = React.useState(mobileAddItemIcon.src)
   const [inputUser, setInputUser] = React.useState()
 
   const handleInputUser = (element, inputName) => {
@@ -20,10 +20,10 @@ export default function AddProductForm() {
     const changeIcon = () => {
       const widthScreen = window.innerWidth
       if(widthScreen >= 768) {
-        setDefaultImg(defaultImgIcon.src)
+        setDefaultImg(desktopAddItemIcon.src)
         return
       }
-      setDefaultImg(crossIcon.src)
+      setDefaultImg(mobileAddItemIcon.src)
     }
 
     changeIcon()

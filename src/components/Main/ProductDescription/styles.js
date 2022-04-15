@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import product from "img/star-wars-product.svg"
 
 export const StyledProductDesc = styled.section`
   > .product-thumb {
