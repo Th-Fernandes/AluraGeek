@@ -2,6 +2,7 @@ import {StyledLogin} from "./styles.js"
 import React from "react";
 import { useRouter } from 'next/router'
 import { supabase } from "utils/supabaseClient"
+import { loginController } from "controller/isLogged";
 
 export default function LoginSection() {
   const [inputData, setInputData] = React.useState()
@@ -19,7 +20,11 @@ export default function LoginSection() {
 
   const handleSignIn = async () => {
     const { error: signInError } = await supabase.auth.signIn(inputData)
-    if (signInError) setAuthError(signInError.message)
+    if (signInError) {
+      setAuthError(signInError.message)
+      return 
+    }
+    loginController.loginStatus = true
     router.push('../../')
   }
 

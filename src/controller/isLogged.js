@@ -1,16 +1,16 @@
- class IsLogged {
-  constructor(user) {
-    this.user = user;
+ class Login {
+  constructor(status) {
+    this.status = status;
   }
 
-  get userInfo() {
-    return this.user
+  get IsLogged() {
+    return this.status
   } 
 
-  set loggedUser(user) {
-    this.user = user
+  set loginStatus(status) {
+    this.status = status
   }
 }
 
-const loginController = new IsLogged()
+const loginController = new Login()
 export {loginController}

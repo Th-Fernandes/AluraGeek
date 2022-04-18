@@ -1,4 +1,4 @@
-import { StyledProducts } from "./styles";
+import { StyledProducts, ProductsList } from "./styles";
 import arrowIcon from "../../../../public/images/general/arrow.svg";
 import React from "react";
 import { useRouter } from 'next/router'
@@ -21,10 +21,16 @@ export default function ProductSection(props) {
     let time = null
    
     const productRender = () => {
+      if (window.innerWidth >= 1024 && window.innerWidth < 1180) {
+        setProductsQuantity(5)
+        return 
+      }
+
       if( window.innerWidth < 1180) {
         setProductsQuantity(4)
         return
-      }
+      } 
+
       setProductsQuantity(6)
     }
 
@@ -36,10 +42,9 @@ export default function ProductSection(props) {
 
       time = setTimeout(() => {
         productRender()
-      }, 200)
+      }, 20)
     })
 
-    
   }, [])
 
   return (
@@ -55,10 +60,9 @@ export default function ProductSection(props) {
           </span>
         </header>
 
-        <ul className="products">
+        <ProductsList gridRows={productsQuantity}>
           {
             products.map((element, index) => {
-              //console.log(element)
               return (
                 <li className="product" key={index}>
 
@@ -78,7 +82,7 @@ export default function ProductSection(props) {
               )
             })
           }
-        </ul>
+        </ProductsList>
       </div>
     </StyledProducts>
   )

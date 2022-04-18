@@ -18,11 +18,13 @@ export const StyledBanner = styled.section`
 
     & > h1 {
       font-size: 5.2rem;
+      animation: 2.25s fade;
     }
 
     & > p {
       font-size: 2.2rem;
       margin: 1.6rem 0;
+      animation: 2.5s fade;
     }
 
     & > button {
@@ -34,11 +36,13 @@ export const StyledBanner = styled.section`
     } 
   }
 
-  @media(max-width: 768px) {
-    .banner-content {
-      padding-left: 3.2rem
+  @media(max-width: 1136px) {
+    & >.banner-content {
+      margin: 0 3.2rem;
     }
   }
+
+
 
   @media(max-width: 425px) {
     > .banner-content {
@@ -52,6 +56,17 @@ export const StyledBanner = styled.section`
         font-size: 1.4rem;
       }
     }
+  }
 
+  @keyframes fade {
+    from {
+      opacity: 0;
+      color: transparent;
+    }
+
+    to {
+      opacity: 1;
+      color: #fff
+    }
   }
 `

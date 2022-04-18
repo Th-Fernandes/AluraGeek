@@ -1,18 +1,17 @@
-import logo from "../../../public/images/general/logo.svg";
-import Image from 'next/image';
-import LoginButton from "./LoginButton/LoginButton";
-import SearchBar from "./SearchBar/SearchBar";
 import { StyledHeader } from "./styles";
-import React from 'react';
+import SearchBar from "./SearchBar/SearchBar";
+import LoginButton from "./LoginButton/LoginButton";
+import Image from 'next/image';
+import logo from "../../../public/images/general/logo.svg";
 import searchIcon from "../../../public/images/general/lupa-preta.svg";
+import React from 'react';
 import { useRouter } from "next/dist/client/router";
-import { loginController } from "controller/isLogged";
+import { supabase } from "utils/supabaseClient";
 
 export default function Header(props) {
   const router = useRouter()
 
   const [logoDimensions, setLogoDimensions] = React.useState({ width: 176, height: 50 })
-  const [isLogged, setIsLogged] = React.useState(false)
   // responsável por alterar o tamanho da logo do header. Recorri a essa solução pois 
   // no css puro (./styles.js) não estava funcionando.
   React.useEffect(() => {
@@ -32,23 +31,17 @@ export default function Header(props) {
     })
   }, [])
 
-  React.useEffect(() =>{
-    if (!loginController.userInfo) {
-      //procura se a url está na rota de login, se true quer dizer que não está. se false é pq está
-      const urlCondition = (window.location.href).indexOf('/access/login') < 0
+  React.useEffect(async () =>{
 
-      if(urlCondition) {
-        const host = window.location.hostname // pega o host
-        //router.push(host, '/access/login') 
-      }
-    } else {
-      // avisa ao component de botao do header que o usuário está logado, com isso ele pode fazer suas devidas alterações
-      setIsLogged(true)
-    }
+    const loginStatus = await supabase.auth.user()
+    // if(loginStatus !== null) setIsLogged(true)
+    // supabase.auth.signOut()
+    console.log()
   }, [])
 
   return (
     <>
+    
       <StyledHeader>
         <div className='search-container'>
           <Image
@@ -60,7 +53,7 @@ export default function Header(props) {
           />
           <SearchBar searchData={props.searchData} />
         </div>
-        <LoginButton adminVer={isLogged || false} />
+        <LoginButton />
         {
           logoDimensions.screenWidth <= 425
             ? <Image src={searchIcon.src} width='24' height='24' />

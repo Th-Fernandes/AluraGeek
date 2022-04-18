@@ -4,11 +4,14 @@ import colors from "utils/colors.json";
 export const StyledProducts = styled.section`
   background-color: ${colors.neutrals["white-300"]};
   padding 6.4rem 0 3.2rem;
+  
+  
 
   .products-container {
     max-width: 113.6rem;
     margin: 0 auto;
-    
+    position: relative;
+    animation: up 1.25s;
 
     & > header {
       display: flex;
@@ -33,73 +36,78 @@ export const StyledProducts = styled.section`
         }
       }
     }
-  
-    .products {
-      display: grid;
-      grid-template-columns: repeat(6, 19.2rem);
-      
-  
-      & .product {
-        & .product-description {
-          margin-top: 0.8rem;
-  
-          & .product-name {
-            font-weight: 500;
-            font-size: 1.4rem;
-          }
-  
-          & .product-price {
-            font-weight: 700;
-            font-size: 1.6rem;
-          }
-  
-          & > a {
-            text-decoration: none;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: ${colors.primary["blue"]}
-          }
-        }
+  }
+
+  @media(max-width: 1136px) { padding-inline: 1.6rem;}
+
+  @keyframes up {
+    from {
+      top: 200px;
+    }
+
+    to {
+      top: 0;
+
+    }
+  }
+`
+
+export const ProductsList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 17.6rem + 1.6rem));
+
+  & .product {
+    & .product-description {
+      margin-top: 0.8rem;
+      margin-right: 1.6rem;
+
+      & .product-name {
+        font-weight: 500;
+        font-size: 1.4rem;
+      }
+
+      & .product-price {
+        font-weight: 700;
+        font-size: 1.6rem;
+      }
+
+      & > a {
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: ${colors.primary["blue"]}
       }
     }
   }
 
-  @media(max-width: 1024px) and (min-width:768px) {
-    padding: 1.6rem 3.2rem;
-
-    .products-container {
-      & .products {
-        display: flex;
-        flex-wrap: wrap;
+  @media(max-width: 768px) { 
+    grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 16.4rem + 1.6rem));
     
-        & .product {
-          margin: 0 auto;
-          & > img {
-            width: 16.4rem;
-          }
-        }
-      }
-     }
-  }
-
-  @media(max-width: 450px) {
-    padding: 3.2rem; 
-    .products-container {
-
-      & .products {
-        grid-template-columns: repeat(2, calc((100vw - 64px) / 2));
-        
-
-        & .product {
-          max-width: 14rem;
-          & > img {
-            width: 14rem;
-            height: 17.4rem;
-          }
-        }
+    .product {
+      & > img {
+        width: 16.4rem;
       }
     }
   }
 
-  @media(max-width)
+  @media(max-width: 790px) {
+      display: flex;
+      align-content: space-between;
+      flex-wrap: wrap;
+      min-height: 49.8rem;
+
+      & > .product {
+        margin-right:1.6rem;
+      }
+  }
+
+  @media(max-width: 425px) { 
+    grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 15.6rem + 1.6rem));
+
+    .product {
+      & > img {
+        width: 15.6rem;
+      }
+    }
+  }
 `

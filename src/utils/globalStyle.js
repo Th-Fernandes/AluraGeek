@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import colors from 'utils/colors.json'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -10,6 +11,11 @@ export const GlobalStyle = createGlobalStyle`
   :root, button, input {
     font-family: 'Raleway', sans-serif;
   }
+
+  p::selection, h1::selection, h2::selection, h3::selection, h4::selection, img::selection {
+    color: black;
+    background-color: ${colors.primary['blue']};
+}
 
   html {
     font-size: 62.5%;
