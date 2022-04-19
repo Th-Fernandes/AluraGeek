@@ -4,14 +4,15 @@ import colors from "utils/colors.json";
 export const StyledProducts = styled.section`
   background-color: ${colors.neutrals["white-300"]};
   padding 6.4rem 0 3.2rem;
-  
-  
+  min-height: 37.9rem;
 
+ 
+  
   .products-container {
     max-width: 113.6rem;
     margin: 0 auto;
     position: relative;
-    animation: up 1.25s;
+    animation: up 0.75s;
 
     & > header {
       display: flex;
@@ -41,11 +42,12 @@ export const StyledProducts = styled.section`
   @media(max-width: 1136px) { padding-inline: 1.6rem;}
 
   @keyframes up {
-    from {
-      top: 200px;
+    0% {
+      top: -80px;
     }
 
-    to {
+
+    100% {
       top: 0;
 
     }
@@ -57,6 +59,20 @@ export const ProductsList = styled.ul`
   grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 17.6rem + 1.6rem));
 
   & .product {
+    transition: 0.12s transform;
+
+    &:hover {
+      
+      transform: scale(1.1);
+      z-index: 999;
+    }
+
+    & > img {
+      cursor: pointer;
+
+
+    }
+
     & .product-description {
       margin-top: 0.8rem;
       margin-right: 1.6rem;
@@ -86,6 +102,7 @@ export const ProductsList = styled.ul`
     .product {
       & > img {
         width: 16.4rem;
+        cursor: pointer;
       }
     }
   }

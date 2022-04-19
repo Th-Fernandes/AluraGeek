@@ -1,29 +1,39 @@
 import ClientHeader from './Header'
 import { StyledClientSec } from './styles'
 import React from 'react'
-import { loginController } from 'controller/isLogged'
 import ProductSection from "components/Main/ProductSection/ProductSection.jsx"
 import {useRouter} from "next/router"
+import {supabase} from "utils/supabaseClient";
 
 export default function ClientProducts() {
-
+  const [isLogged, setIslogged] = React.useState()
   const router = useRouter()
+
+  React.useEffect(() => {
+    const loginSesssion = supabase.auth.session()
+    console.log(loginSesssion)
+
+    if(!loginSesssion) {
+      router.push('/access/login')  
+      return
+    }
+
+    setIslogged(true)
+  }, [])
 
   return (
     <>
     {
-      loginController.userInfo 
+      isLogged
         ? (
             <StyledClientSec>
               <ClientHeader />
         
-              <ProductSection
+              {/* <ProductSection
                 title=''
                 productData={loginController.userInfo}
-              />
+              /> */}
         
-        
-              {console.log(loginController.userInfo)}
     
             </StyledClientSec>
         )

@@ -17,6 +17,7 @@ export default function ProductSection(props) {
       } 
   }
 
+
   React.useEffect(() => {
     let time = null
    
@@ -64,18 +65,21 @@ export default function ProductSection(props) {
           {
             products.map((element, index) => {
               return (
-                <li className="product" key={index}>
+                <li
+                  onClick={() => router.push(`./product?name=${element.name}`)} 
+                  className="product" 
+                  key={index}>
 
                   <img
                     src={element.thumb}
                     alt={element.alt}
+                    
                   />
 
                   <span className="product-description">
                     <p className="product-name">{element.name}</p>
                     <p className="product-price">{element.price}</p>
                     <a
-                      onClick={() => router.push(`./product?name=${element.name}`)}
                     > ver tudo </a>
                   </span>
                 </li>

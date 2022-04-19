@@ -14,12 +14,31 @@ const HeaderButtonBasis = styled.button`
  const DefaultLogButton = styled(HeaderButtonBasis)`
   border: 1px solid ${colors.primary["blue"]};
   color: ${colors.primary["blue"]};
+  transition: 0.35s background-color, 1s color;
+
+  &:hover {
+    background-color: ${colors.primary.blue};
+    color: ${colors.neutrals.white};
+  }
+
+  @keyframes fadeButton {
+    to {
+      
+    }
+  }
 `
 
 const LogoffButton = styled(HeaderButtonBasis)`
-  background-color: #cf142b ;
-  color: ${colors.neutrals['white']};
+  border: 1px solid ${colors.primary["red"]};
+  color: ${colors.primary.red};
   font-weight: bold;
+  transition: 0.35s background-color, 0.5s color;
+
+  &:hover {
+    background-color: ${colors.primary.red};
+    color: ${colors.neutrals.white};
+    
+  }
 `
 
 export {DefaultLogButton, LogoffButton}

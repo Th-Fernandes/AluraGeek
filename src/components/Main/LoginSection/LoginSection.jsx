@@ -1,13 +1,14 @@
-import {StyledLogin} from "./styles.js"
+import { ModalEmail, StyledLogin} from "./styles.js"
 import React from "react";
 import { useRouter } from 'next/router'
 import { supabase } from "utils/supabaseClient"
-import { loginController } from "controller/isLogged";
+
 
 export default function LoginSection() {
   const [inputData, setInputData] = React.useState()
   const [signType, setSignType] = React.useState('signIn')
   const [authError, setAuthError] = React.useState()
+  const [emailModal, setEmailModal] = React.useState(false)
 
   const router = useRouter()
 
@@ -24,13 +25,18 @@ export default function LoginSection() {
       setAuthError(signInError.message)
       return 
     }
-    loginController.loginStatus = true
-    router.push('../../')
+  
+    router.push('/')
   }
 
   const handleSignUp = async () => {
-    const {error: signUpError } = await supabase.auth.signUp(inputData)
-    if (signUpError) setAuthError(signUpError.message)
+    const {user, session, error: signUpError } = await supabase.auth.signUp(inputData)
+    if (!signUpError) {
+      setEmailModal(true)
+    } else {
+      setAuthError(signUpError.message)
+    }
+
   }
 
 
@@ -43,6 +49,27 @@ export default function LoginSection() {
         justifyContent: "center"
       }}
     >
+    
+    {
+      emailModal &&
+        <ModalEmail>
+        <section className="modal-content">
+          <article>
+            <h3>Quase lá!</h3>
+
+            <p>
+              basta apenas você confirmar o cadastro no seu email
+              para o acesso a sua conta ser liberado.
+            </p>
+          </article>
+
+          <button onClick={() => router.push('/')}>ok</button>
+        </section>
+
+        
+      </ModalEmail>
+    }
+     
      <StyledLogin 
         onSubmit={event => {
           event.preventDefault()
@@ -57,8 +84,8 @@ export default function LoginSection() {
        <fieldset>
           {
             signType === 'signIn' 
-              ? <legend>Iniciar sessão</legend> 
-              : <legend>Criar conta</legend>
+              ? <legend >Iniciar sessão</legend> 
+              : <legend style={{animation: 'legendFade 1.2s'}}>Criar conta</legend>
           }
 
           {authError ? <small className="auth-error">{authError}</small> : null}
@@ -102,7 +129,6 @@ export default function LoginSection() {
                 </span>
               </small>
             )
-
          }
        </fieldset>
      </StyledLogin>

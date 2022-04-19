@@ -45,6 +45,7 @@ export default function Header(props) {
       <StyledHeader>
         <div className='search-container'>
           <Image
+            style={{cursor: 'pointer'}}
             onClick={() => router.push('../')}
             src={logo.src}
             alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
