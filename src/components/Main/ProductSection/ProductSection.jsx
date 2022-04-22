@@ -7,45 +7,38 @@ export default function ProductSection(props) {
   const router = useRouter()
   const [productsQuantity, setProductsQuantity] = React.useState(4)
 
-  const products = []
+  let products = []
 
   const renderProducts = (quantity) => {
-      for (let i = 0; i <= (quantity - 1); i++) {
-        const item = props.productData.items[i]
-        
-        if(item) products.push(item)
-      } 
+    const { items } = props.productData
+    const filterByQuantity = items.filter((product, index) => index < quantity)
+    products = filterByQuantity
   }
 
-
   React.useEffect(() => {
-    let time = null
-   
     const productRender = () => {
       if (window.innerWidth >= 1024 && window.innerWidth < 1180) {
-        setProductsQuantity(5)
-        return 
+        return setProductsQuantity(5)
+        
+      } else if (window.innerWidth < 1180) {
+        return setProductsQuantity(4)
+        
       }
-
-      if( window.innerWidth < 1180) {
-        setProductsQuantity(4)
-        return
-      } 
-
       setProductsQuantity(6)
     }
 
     productRender()
 
+    let time = null
 
     window.addEventListener('resize', () => {
       clearTimeout(time)
 
       time = setTimeout(() => {
         productRender()
-      }, 20)
+      }, 50)
     })
-
+    
   }, [])
 
   return (
@@ -66,14 +59,14 @@ export default function ProductSection(props) {
             products.map((element, index) => {
               return (
                 <li
-                  onClick={() => router.push(`./product?name=${element.name}`)} 
-                  className="product" 
+                  onClick={() => router.push(`./product?name=${element.name}`)}
+                  className="product"
                   key={index}>
 
                   <img
                     src={element.thumb}
                     alt={element.alt}
-                    
+
                   />
 
                   <span className="product-description">

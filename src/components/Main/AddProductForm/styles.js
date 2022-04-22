@@ -16,6 +16,7 @@ fieldset {
 
     & .drop-product-container {
       height: 13.4rem;
+      animation: legendFade 0.5s;
 
       & > .drop-product-content {
         height: 13.4rem;
@@ -119,6 +120,7 @@ export const StyledAdmProduct = styled.div`
   margin-top: 1.6rem;
 
   & > div {
+    animation: legendFade 0.65s;
     padding: 0.8rem 1.2rem;
     background-color: ${colors.neutrals["white"]};
 

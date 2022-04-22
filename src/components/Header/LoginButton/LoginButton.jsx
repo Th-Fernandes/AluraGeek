@@ -32,7 +32,7 @@ export default function LoginButton(props) {
     const loginStatus = await supabase.auth.user()
 
     if(loginStatus){ 
-      setAccessRouter('/access/admin')
+      setAccessRouter('/access/products')
     } else { 
       setAccessRouter('/access/login')
     }
@@ -40,7 +40,7 @@ export default function LoginButton(props) {
     verifyRoute()
   }, [])
 
-  if(accessRouter === '/access/admin' && logoffRoute) {
+  if(accessRouter === '/access/products' && logoffRoute) {
     return (
       <LogoffButton onClick={handleLogoff}> Sair </LogoffButton>
     )
@@ -50,7 +50,7 @@ export default function LoginButton(props) {
         onClick={() => { router.push(accessRouter) }}
       >
         { 
-          accessRouter === '/access/admin' 
+          accessRouter === '/access/products' 
             ? 'Menu administrador' 
             : 'Login'
         }

@@ -92,7 +92,7 @@ export default function AddProductForm() {
             backgroundColor: "#2A7AE4",
             color: "#ffffff",
             height: '5.1rem',
-            fontSize: '1.6rem'
+            fontSize: '1.6rem',
           }}
         >
             Adicionar produto

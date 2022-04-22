@@ -15,7 +15,7 @@ export default function UserProducts() {
       <Header />
 
       <main style={{minHeight: '40rem', backgroundColor: pallet.neutrals["white-300"]}}>
-        <ClientProducts />
+      <ClientProducts />
 
 
       </main>

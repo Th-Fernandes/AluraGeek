@@ -28,8 +28,9 @@ export default function SearchBar(props) {
     let productos = [];
     
     for (let products of data) {
-      //console.log(products)
-      let filterTitle = products.items.map(product => {
+      let filterCategory = products.category
+
+      let filterItems = products.items.map(product => {
         const findIndex = product.name.indexOf(input)
 
         if (findIndex >= 0) {
@@ -37,17 +38,13 @@ export default function SearchBar(props) {
         }
         return null
       })
-      //SearchController.pushProducts =  {items: filterTitle}
-       
-      
-      productos.push({items: filterTitle})
+      productos.push({items: filterItems, category: filterCategory})
 
       if(productos.length > 3) {
         productos.splice(0, 1)
       }
       console.log(productos)
       props.searchData(productos)
-      //console.log(SearchController.getProducts) 
     }
   }
 

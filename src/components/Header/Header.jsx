@@ -31,14 +31,6 @@ export default function Header(props) {
     })
   }, [])
 
-  React.useEffect(async () =>{
-
-    const loginStatus = await supabase.auth.user()
-    // if(loginStatus !== null) setIsLogged(true)
-    // supabase.auth.signOut()
-    console.log()
-  }, [])
-
   return (
     <>
     
@@ -46,7 +38,7 @@ export default function Header(props) {
         <div className='search-container'>
           <Image
             style={{cursor: 'pointer'}}
-            onClick={() => router.push('../')}
+            onClick={() => router.push('/')}
             src={logo.src}
             alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
             width={logoDimensions.width}

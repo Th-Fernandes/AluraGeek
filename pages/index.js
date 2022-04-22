@@ -4,7 +4,6 @@ import Banner from "components/Main/Banner/Banner"
 import ErrorMessage from "components/Main/ErrorMessage/ErrorMessage"
 import ProductSection from "components/Main/ProductSection/ProductSection"
 import React from "react";
-import { SearchController } from "controller/SearchRender"
 import { supabase } from "utils/supabaseClient"
 
 
@@ -14,7 +13,6 @@ export default function Home() {
   const [searchData, setSearchData] = React.useState()
   const [errorScreen, setErrorScreen] = React.useState(false)
 
-  SearchController.registerState(setSearchData)
 
   React.useEffect(async () => {
     const res = await supabase
@@ -22,7 +20,6 @@ export default function Home() {
       .select('*')
       .then((response) => {
        if(response.status >= 400) {
-          console.log('caiua aqu')
           setErrorScreen(response.status)
           return
         }
@@ -43,26 +40,26 @@ export default function Home() {
           searchData
             ?
               (
-                searchData.map((element, index) => (
-                  <ProductSection
-                    title=' '
-                    productData={element}
-                    key={index}
-                  />
-                )
-                )
-              )
-            :
-              (
-                data &&
-                data.map((element, index) => (
-                  <ProductSection
+                searchData.map((element, index) => {
+                  console.log(element)
+                  return <ProductSection
                     title={element.category}
                     productData={element}
                     key={index}
                   />
-                )
-                )
+                })
+              )
+            :
+              (
+                data &&
+                data.map((element, index) => {
+                  console.log(element)
+                  return <ProductSection
+                    title={element.category}
+                    productData={element}
+                    key={index}
+                  />
+              })
               )
         }
 

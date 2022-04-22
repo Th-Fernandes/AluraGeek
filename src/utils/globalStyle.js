@@ -35,5 +35,19 @@ export const GlobalStyle = createGlobalStyle`
   ul {
     list-style: none;
   }
+
+  @keyframes legendFade {
+    from {
+      opacity: 0;
+      font-size: 0;
+      transform: rotate(20deg)
+    }
+
+    to {
+      opacity: 1;
+      font-size: 1.8rem;
+      transform: rotate(0)
+    }
+  }
 `
 
