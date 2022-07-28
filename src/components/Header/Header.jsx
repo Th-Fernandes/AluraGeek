@@ -7,7 +7,7 @@ import LoginButton from "./LoginButton/LoginButton";
 import logo from "../../../public/images/general/logo.svg";
 import searchIcon from "../../../public/images/general/lupa-preta.svg";
 
-export default function Header(props) {
+export default function Header({ searchData }) {
   const router = useRouter();
   const [isSearchMobileAble, setIsSearchMobileAble] = useState(false);
 
@@ -29,20 +29,20 @@ export default function Header(props) {
   }, [])
 
   return (
-    <>
-      <StyledHeader>
-        <div className='search-container'>
-          <Image
-            className='logo'
-            onClick={() => router.push('/')}
-            src={logo}
-            alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
-          />
-          <SearchBar searchData={props.searchData} />
-        </div>
-        <LoginButton />
-        { isSearchMobileAble && <Image src={searchIcon} /> }
-      </StyledHeader>
-    </>
+    <StyledHeader>
+      <div className='search-container'>
+        <Image
+          className='logo'
+          onClick={() => router.push('/')}
+          src={logo}
+          alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
+          width={100} height={28}
+        />
+        <SearchBar searchData={searchData} />
+      </div>
+      <LoginButton />
+      {isSearchMobileAble && <Image src={searchIcon} />}
+    </StyledHeader>
   )
 }
+
