@@ -13,6 +13,11 @@ export const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     width: 60rem;
+
+     .logo {
+      width: 20rem;
+      cursor: pointer;
+    }
   }
 
   @media(min-width: 768px) and (max-width: 1136px) {

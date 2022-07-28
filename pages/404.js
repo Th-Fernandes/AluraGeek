@@ -1,11 +1,8 @@
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
-import colors from "utils/colors.json";
 import DefaultError from "components/Main/DefaultError/index.jsx"
 
 export default function Error404() {
-
-
   return (
     <>
       <Header />
@@ -22,7 +19,6 @@ export default function Error404() {
       </main>
 
       <Footer />
-
     </>
   )
 }
