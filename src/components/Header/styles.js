@@ -21,6 +21,7 @@ export const StyledHeader = styled.header`
 
      .logo {
       cursor: pointer;
+      width: 20rem;
     }
   }
 `
