@@ -21,7 +21,13 @@ export const StyledHeader = styled.header`
 
      .logo {
       cursor: pointer;
-      width: 20rem;
+      width: 10rem;
+      height: 2.8rem;
+
+      @media(min-width: 1024px){
+        width: 17.6rem
+        height: 5rem;
+      }
     }
   }
 `

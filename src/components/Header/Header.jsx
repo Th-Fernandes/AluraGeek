@@ -16,7 +16,7 @@ export default function Header() {
     const screenWidth = {
       value: () => window.innerWidth,
       validateSearchMenuMobile: () => {
-        screenWidth.value() <= 425
+        screenWidth.value() < 768
           ? setIsSearchMobileAble(true)
           : setIsSearchMobileAble(false)
       }
@@ -31,10 +31,10 @@ export default function Header() {
   return (
     <StyledHeader>
       <div className='search-container'>
-        <Image
+        <img
           className='logo'
           onClick={() => router.push('/')}
-          src={logo}
+          src={logo.src}
           alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
         />
         <SearchBar />
