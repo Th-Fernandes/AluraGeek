@@ -1,8 +1,6 @@
 import { FormSearchBar } from "./styles";
 import MagnifierIcon from 'next/image';
 import magnifierIconPath from "../../../../public/images/general/lupa.svg";
-import { useEffect, useState } from "react";
-import { supabase } from "utils/supabaseClient";
 
 export default function SearchBar() {
   function handleCancelSubmitBehavior(event) {
