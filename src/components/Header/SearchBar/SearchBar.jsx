@@ -1,6 +1,6 @@
 import { FormSearchBar } from "./styles";
-import SearchIcon from 'next/image';
-import searchIcon from "../../../../public/images/general/lupa.svg";
+import MagnifierIcon from 'next/image';
+import magnifierIconPath from "../../../../public/images/general/lupa.svg";
 import { useEffect, useState } from "react";
 import { supabase } from "utils/supabaseClient";
 
@@ -20,8 +20,8 @@ export default function SearchBar() {
         placeholder="O que deseja encontrar?"
       />
 
-      <SearchIcon
-        src={searchIcon}
+      <MagnifierIcon
+        src={magnifierIconPath}
         width={17}
         height={17}
       />
