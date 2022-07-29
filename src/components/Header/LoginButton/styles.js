@@ -1,43 +1,42 @@
 import styled from "styled-components";
 import colors from "utils/colors.json";
 
-const HeaderButtonBasis = styled.button`
-  width: 18.2rem;
-  height: 5.1rem;
+const DefaultHeaderButton = styled.button`
+  width: clamp(13.3rem, 15vw, 18.2rem);
+  height: 4rem;
   font-size: 1.6rem;
+  font-weight: 600;
+  transition: 0.25s background-color, 0.5s color;
 
-  @media(max-width: 768px) {
-    font-weight: 600;
-  }
+  @media(min-width: 768px) {
+    height: 5.1rem;
+    font-weight: 400;
+  }   
 `
 
- const DefaultLogButton = styled(HeaderButtonBasis)`
+ const DefaultLogButton = styled(DefaultHeaderButton)`
   border: 1px solid ${colors.primary["blue"]};
   color: ${colors.primary["blue"]};
-  transition: 0.35s background-color, 1s color;
 
   &:hover {
     background-color: ${colors.primary.blue};
     color: ${colors.neutrals.white};
   }
 
-  @keyframes fadeButton {
-    to {
-      
-    }
+  &::before {
+    content: ${({textContent}) => `'${textContent}'`}
   }
+
 `
 
-const LogoffButton = styled(HeaderButtonBasis)`
+const LogoffButton = styled(DefaultHeaderButton)`
   border: 1px solid ${colors.primary["red"]};
   color: ${colors.primary.red};
   font-weight: bold;
-  transition: 0.35s background-color, 0.5s color;
 
   &:hover {
     background-color: ${colors.primary.red};
-    color: ${colors.neutrals.white};
-    
+    color: ${colors.neutrals.white}; 
   }
 `
 

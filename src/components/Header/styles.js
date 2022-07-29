@@ -13,6 +13,10 @@ export const StyledHeader = styled.header`
     padding: 0 3.2rem;
   }
 
+  @media(min-width: 1440px) {
+    padding: 0;
+  }
+
   .search-container {
     display: flex;
     align-items: center;
@@ -25,7 +29,7 @@ export const StyledHeader = styled.header`
       height: 2.8rem;
 
       @media(min-width: 1024px){
-        width: 17.6rem
+        width: 17.6rem;
         height: 5rem;
       }
     }
