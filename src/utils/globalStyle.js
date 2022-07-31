@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   
   // FONT CONFIG 
 
-  body {
+  body, button, a {
     font-size: 1.6rem;
     font-family: 'Raleway', sans-serif;
   }

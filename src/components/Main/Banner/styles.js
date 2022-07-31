@@ -1,16 +1,26 @@
 import styled from "styled-components";
+import bannerMobile from "../../../../public/images/general/banner-mobile.svg";
 import banner from "../../../../public/images/general/banner.svg";
 import colors from "utils/colors.json";
 
-export const StyledBanner = styled.section`
+export const BannerContainer = styled.section`
   display: flex; 
   align-items: end;
-  flex-wrap: wrap;
-  min-height: 35.2rem;
-  padding-bottom: 3.2rem;
-  background: url(${banner.src})  center no-repeat;
-  background-size: cover;
   max-width: 100%;
+  height: 30.2rem;
+  padding-bottom: 1.6rem;
+  background: url(${bannerMobile.src}) center no-repeat;
+  background-size: cover;
+
+  @media(min-width: 768px) {
+    background-image: url(${banner.src})
+    height: 35.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  @media(min-width: 1440px) {
+    height: 46.7rem;
+  }
 
   > .banner-content {
     width: 113.6rem;
@@ -18,45 +28,23 @@ export const StyledBanner = styled.section`
     color: ${colors.neutrals["white"]};
 
     & > h1 {
-      font-size: 5.2rem;
+      font-size: clamp(2.2rem, 6.35vw, 5.2rem);
       animation: 2.25s fade;
     }
 
     & > p {
-      font-size: 2.2rem;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
       margin: 1.6rem 0;
       animation: 2.5s fade;
     }
 
     & > button {
-      width: 13rem;
       height: 5.1rem;
+      padding: 0 1.6rem;
+      font-size: 1.4rem;
       background-color: ${colors.primary["blue"]};
       color: ${colors.neutrals["white"]};
-      font-size: 1.6rem;
     } 
-  }
-
-  @media(max-width: 1136px) {
-    & >.banner-content {
-      margin: 0 3.2rem;
-    }
-  }
-
-
-
-  @media(max-width: 425px) {
-    > .banner-content {
-      padding-left: 1.6rem;
-
-      & > h1 {
-        font-size: 2.2rem;
-      }
-  
-      & > p {
-        font-size: 1.4rem;
-      }
-    }
   }
 
   @keyframes fade {
@@ -67,7 +55,7 @@ export const StyledBanner = styled.section`
 
     to {
       opacity: 1;
-      color: #fff
+      color: #fff;
     }
   }
 `

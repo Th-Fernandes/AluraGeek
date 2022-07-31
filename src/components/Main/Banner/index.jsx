@@ -1,14 +1,14 @@
-import {StyledBanner} from "./styles"
+import {BannerContainer} from "."
 
-export default function Banner() {
+export function Banner() {
   return (
-    <StyledBanner>
+    <BannerContainer>
       <article className="banner-content">
         <h1>Dezembro Promocional</h1>
         <p>Produtos selecionados com 33% de desconto</p>
 
         <button>ver consoles</button>
       </article>
-    </StyledBanner>
+    </BannerContainer>
   )
 }
