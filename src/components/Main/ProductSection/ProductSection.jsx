@@ -1,13 +1,13 @@
 import { StyledProducts, ProductsList } from "./styles";
 import arrowIcon from "../../../../public/images/general/arrow.svg";
-import React from "react";
-import { useRouter } from 'next/router'
+import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 
 export default function ProductSection(props) {
-  const router = useRouter()
-  const [productsQuantity, setProductsQuantity] = React.useState(4)
+  const router = useRouter();
+  const [productsQuantity, setProductsQuantity] = useState(4);
 
-  let products = []
+  let products = [];
 
   const renderProducts = (quantity) => {
     const { items } = props.productData
@@ -15,7 +15,7 @@ export default function ProductSection(props) {
     products = filterByQuantity
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const productRender = () => {
       if (window.innerWidth >= 1024 && window.innerWidth < 1180) {
         return setProductsQuantity(5)
@@ -44,7 +44,6 @@ export default function ProductSection(props) {
   return (
     <StyledProducts>
       {renderProducts(productsQuantity)}
-      <div className="products-container">
         <header>
           <h2>{props.title}</h2>
 
@@ -80,7 +79,7 @@ export default function ProductSection(props) {
             })
           }
         </ProductsList>
-      </div>
+      
     </StyledProducts>
   )
 }

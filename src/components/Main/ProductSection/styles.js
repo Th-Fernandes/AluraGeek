@@ -5,18 +5,12 @@ export const StyledProducts = styled.section`
   padding 6.4rem 0 3.2rem;
   min-height: 37.9rem;
    
-  .products-container {
-    max-width: 113.6rem;
-    margin: 0 auto;
-    position: relative;
-    animation: up 0.75s;
-
-    & > header {
+    &  header {
       display: flex;
       justify-content: space-between;
       margin-bottom: 1.6rem;
   
-      & > h2 {
+      & h2 {
         font-size: 3.2rem;
       }
   
@@ -25,7 +19,7 @@ export const StyledProducts = styled.section`
         align-items: center;
         cursor: pointer;
   
-        & > a {
+        &  a {
           text-decoration: none;
           color: ${colors.primary["blue"]};
           font-weight: 700;
@@ -34,21 +28,6 @@ export const StyledProducts = styled.section`
         }
       }
     }
-  }
-
-  @media(max-width: 1136px) { padding-inline: 1.6rem;}
-
-  @keyframes up {
-    0% {
-      top: -80px;
-    }
-
-
-    100% {
-      top: 0;
-
-    }
-  }
 `
 
 export const ProductsList = styled.ul`
@@ -59,15 +38,12 @@ export const ProductsList = styled.ul`
     transition: 0.12s transform;
 
     &:hover {
-      
       transform: scale(1.1);
       z-index: 999;
     }
 
     & > img {
       cursor: pointer;
-
-
     }
 
     & .product-description {

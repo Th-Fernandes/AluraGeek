@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   // SPACING CONFIG
-  section, header {
+  section, #__next > header {
     padding: 0 1.6rem;
 
     @media(min-width: 768px) {
