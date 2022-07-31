@@ -2,76 +2,57 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledFooter = styled.footer`
-  height: 36.8rem;
+  padding-inline: 0; 
+  background-color: ${colors.primary["blue-light"]};
 
-  .footer-container {
-    padding: 6.4rem 0;
-    background-color: ${colors.primary["blue-light"]};
+  & .channels {
+    max-width: 113.6rem;
+    margin: auto;
+    padding: 1.6rem 0 3.2rem;
 
-    & .channels {
-      max-width: 113.6rem;
-      margin: 0 auto;
+    @media(min-width: 768px) {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; 
+      padding: 3.2rem;
+    }
 
-    & nav  {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      width: 41.8rem;
+    @media(min-width: 1024px) {
+      padding: 6.4rem 0;
+    }
+
+    & .footer-nav {
+      text-align: center;
+      font-weight: bold;
+
+      @media(min-width: 768px) {
+        text-align: left;
+      }
+
+      @media(min-width: 1024px){
+        display: flex;
+        align-items: flex-start;
+        gap: 11.2rem;
+      }
 
       & .footer-links {
         & .footer-link {
-          font-size: 1.6rem;
+          margin-bottom: 1.6rem;
 
-          &:not(last-child) {
+          @media(min-width: 768px) {
             margin-bottom: 2.4rem;
           }
         }
       }
     }
-    }
   }
 
-  .programer-info {
-    height: 10.2rem;
+  & .programmer-info {
     display: flex;
+    justify-content: center;  
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
-    font-size: 1.6rem;
-    font-weight: 500;
-
-    & > span {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-
-  @media (max-width: 800px) {
-    
-    .footer-container {
-      padding: 3.2rem 3.2rem;
-      & .channels {
-        
-        & nav {
-          display: block;
-        }
-      }
-    }
-  }
-
-  @media(max-width: 425px) {
-    .footer-container {
-      padding: 3.2rem 0.8rem;
-      & .channels {
-        flex-wrap: wrap;
-        & nav {
-          text-align: center;
-        }
-      }
-    }
+    flex-direction: column;
+    height: 10.2rem;
+    margin-top: 1.6rem;
+    background-color: ${colors.neutrals.white};
   }
 `

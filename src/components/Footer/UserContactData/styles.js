@@ -2,7 +2,7 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledUserData = styled.form`
-  width: 56rem;
+  // width: 56rem;
 
   > fieldset {
     border: none;

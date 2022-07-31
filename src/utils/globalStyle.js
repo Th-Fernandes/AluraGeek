@@ -22,10 +22,18 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  body {
+    font-size: 1.6rem;
+  }
+
   input, button {
     background: transparent;
     border: none;
     outline: none;
+  }
+
+  header, section, footer {
+    padding: 0 1.6rem;
   }
 
   button, a {
