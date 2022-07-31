@@ -3,13 +3,14 @@ import banner from "../../../../public/images/general/banner.svg";
 import colors from "utils/colors.json";
 
 export const StyledBanner = styled.section`
-  min-height: 35.2rem;
-  background: url(${banner.src})  center no-repeat;
-  background-size: cover;
-  display: flex;
+  display: flex; 
   align-items: end;
   flex-wrap: wrap;
+  min-height: 35.2rem;
   padding-bottom: 3.2rem;
+  background: url(${banner.src})  center no-repeat;
+  background-size: cover;
+  max-width: 100%;
 
   > .banner-content {
     width: 113.6rem;

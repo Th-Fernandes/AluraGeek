@@ -2,38 +2,52 @@ import { createGlobalStyle } from "styled-components";
 import colors from 'utils/colors.json'
 
 export const GlobalStyle = createGlobalStyle`
+  // DISPLAY CONFIG
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
-  :root, button, input {
-    font-family: 'Raleway', sans-serif;
-  }
-
-  p::selection, h1::selection, h2::selection, h3::selection, h4::selection, img::selection {
-    color: black;
-    background-color: ${colors.primary['blue']};
-}
-
+  
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    
+    body {
+      main {
+        background-color: ${colors.neutrals["white-300"]};
+      }
+    }
   }
+
+  // SPACING CONFIG
+  section, header {
+    padding: 0 1.6rem;
+
+    @media(min-width: 768px) {
+      padding: 0 3.2rem;
+    }
+
+    @media(min-width: 1440px) {
+      max-width: 113.6rem;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+  
+  // FONT CONFIG 
 
   body {
     font-size: 1.6rem;
+    font-family: 'Raleway', sans-serif;
   }
 
+  // RESET CONFIG 
+ 
   input, button {
     background: transparent;
     border: none;
     outline: none;
-  }
-
-  header, section, footer {
-    padding: 0 1.6rem;
   }
 
   button, a {
@@ -44,18 +58,11 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  @keyframes legendFade {
-    from {
-      opacity: 0;
-      font-size: 0;
-      transform: rotate(20deg)
-    }
+  // SELECTION CONFIG
 
-    to {
-      opacity: 1;
-      font-size: 1.8rem;
-      transform: rotate(0)
-    }
+  ::selection {
+    color: black;
+    background-color: ${colors.primary['blue']};
   }
 `
 

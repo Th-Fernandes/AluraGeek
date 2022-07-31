@@ -2,12 +2,9 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledProducts = styled.section`
-  background-color: ${colors.neutrals["white-300"]};
   padding 6.4rem 0 3.2rem;
   min-height: 37.9rem;
-
- 
-  
+   
   .products-container {
     max-width: 113.6rem;
     margin: 0 auto;
