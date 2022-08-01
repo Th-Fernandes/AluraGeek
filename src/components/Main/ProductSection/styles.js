@@ -2,16 +2,35 @@ import styled from "styled-components";
 import colors from "utils/colors.json";
 
 export const StyledProducts = styled.section`
-  padding 6.4rem 0 3.2rem;
-  min-height: 37.9rem;
-   
+  padding-block: 1.6rem;
+
+  @media(min-width: 768px) {
+    padding-block: 3.2rem;
+
+    &:last-child {
+      padding-bottom: 3.2rem;
+    }
+  }
+
+  @media(min-width: 1024px) {
+    padding-block: 6.4rem 3.2rem;
+    
+    &:last-child {
+      padding-bottom: 6.4rem;
+    }
+  }
+
     &  header {
       display: flex;
       justify-content: space-between;
       margin-bottom: 1.6rem;
   
       & h2 {
-        font-size: 3.2rem;
+        font-size: 2.2rem ;
+
+        @media(min-width: 1024px) {
+          font-size: 3.2rem;
+        }
       }
   
       & .all-products-link {
@@ -32,24 +51,41 @@ export const StyledProducts = styled.section`
 
 export const ProductsList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 17.6rem + 1.6rem));
+  grid-template-columns: repeat( 2 , 15.6rem);
+  gap: 1.6rem;
+  margin: 0 auto;
+  padding-block: 0.8rem;
+  overflow-x: scroll; 
+
+  @media(min-width: 500px) {
+    grid-template-columns: repeat(  ${(props) => props.gridColumns} , 17.6rem);
+  }
+
+  @media(min-width: 768px) {
+    overflow-y: hidden; 
+  }
+
 
   & .product {
-    transition: 0.12s transform;
-
-    &:hover {
-      transform: scale(1.1);
-      z-index: 999;
-    }
-
     & > img {
+      transition: 0.2s transform;
       cursor: pointer;
+      width: 15.6rem;
+      height: 17.4rem;
+
+      @media(min-width: 1024px) {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      
+
+      @media(min-width: 768px) {
+        width: 16.4rem;
+      }
     }
 
     & .product-description {
-      margin-top: 0.8rem;
-      margin-right: 1.6rem;
-
       & .product-name {
         font-weight: 500;
         font-size: 1.4rem;
@@ -57,47 +93,29 @@ export const ProductsList = styled.ul`
 
       & .product-price {
         font-weight: 700;
-        font-size: 1.6rem;
       }
 
       & > a {
-        text-decoration: none;
-        font-size: 1.6rem;
         font-weight: 700;
         color: ${colors.primary["blue"]}
       }
     }
   }
 
-  @media(max-width: 768px) { 
-    grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 16.4rem + 1.6rem));
-    
-    .product {
-      & > img {
-        width: 16.4rem;
-        cursor: pointer;
-      }
+
+  @keyframes img {
+    0% {
+      border-radius: 0;
+      
     }
-  }
 
-  @media(max-width: 790px) {
-      display: flex;
-      align-content: space-between;
-      flex-wrap: wrap;
-      min-height: 49.8rem;
+    50% {
+      border-radius: 6.4rem ; 
+      rotate: 90deg;
+    }
 
-      & > .product {
-        margin-right:1.6rem;
-      }
-  }
-
-  @media(max-width: 425px) { 
-    grid-template-columns: repeat(${({gridRows}) => gridRows}, calc( 15.6rem + 1.6rem));
-
-    .product {
-      & > img {
-        width: 15.6rem;
-      }
+    100% {
+      border-radius: 0;
     }
   }
 `

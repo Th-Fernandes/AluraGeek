@@ -3,58 +3,50 @@ import arrowIcon from "../../../../public/images/general/arrow.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 
-export default function ProductSection(props) {
+export default function ProductSection({productData}) {
   const router = useRouter();
-  const [productsQuantity, setProductsQuantity] = useState(4);
+  let [products, setProducts] = useState([]);
 
-  let products = [];
-
-  const renderProducts = (quantity) => {
-    const { items } = props.productData
-    const filterByQuantity = items.filter((product, index) => index < quantity)
-    products = filterByQuantity
-  }
+  function renderProducts(quantity){
+    const { items } = productData;
+    const filterByQuantity = items.filter((product, index) => index < quantity);
+    setProducts(filterByQuantity);
+  };
 
   useEffect(() => {
-    const productRender = () => {
-      if (window.innerWidth >= 1024 && window.innerWidth < 1180) {
-        return setProductsQuantity(5)
-        
-      } else if (window.innerWidth < 1180) {
-        return setProductsQuantity(4)
-        
-      }
-      setProductsQuantity(6)
+    function productRender()  {
+      const screenWidth = window.innerWidth
+
+      if (screenWidth < 768  ) renderProducts(4)
+      if (screenWidth >= 1444) renderProducts(6)
     }
 
     productRender()
-
-    let time = null
+    
+    let time = null;
 
     window.addEventListener('resize', () => {
-      clearTimeout(time)
+      clearTimeout(time);
 
-      time = setTimeout(() => {
-        productRender()
-      }, 50)
-    })
+      time = setTimeout(() => productRender(), 150);
+    });
     
   }, [])
 
   return (
     <StyledProducts>
-      {renderProducts(productsQuantity)}
         <header>
-          <h2>{props.title}</h2>
+          <h2>{productData.category}</h2>
 
           <span className="all-products-link">
             <a href="#">Ver tudo</a>
-            <img src={arrowIcon.src} alt={`Selecione essa opção para ver todos os produtos sobre ${props.title}`} />
+            <img src={arrowIcon.src} alt={`Selecione essa opção para ver todos os produtos sobre ${productData.category}`} />
           </span>
         </header>
 
-        <ProductsList gridRows={productsQuantity}>
+        <ProductsList gridColumns={products.length}>
           {
+            products &&
             products.map((element, index) => {
               return (
                 <li
@@ -65,14 +57,12 @@ export default function ProductSection(props) {
                   <img
                     src={element.thumb}
                     alt={element.alt}
-
                   />
 
                   <span className="product-description">
                     <p className="product-name">{element.name}</p>
                     <p className="product-price">{element.price}</p>
-                    <a
-                    > ver tudo </a>
+                    <a> ver tudo </a>
                   </span>
                 </li>
               )

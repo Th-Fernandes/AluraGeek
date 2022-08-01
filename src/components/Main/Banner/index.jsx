@@ -1,4 +1,4 @@
-import {BannerContainer} from "."
+import {BannerContainer} from "./styles.js"
 
 export function Banner() {
   return (

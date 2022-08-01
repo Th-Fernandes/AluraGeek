@@ -32,7 +32,6 @@ export default function Home() {
           productsData
             ? productsData.map((productList, index) => (
                 <ProductSection
-                  title={productList.category}
                   productData={productList}
                   key={index}
                 />))
