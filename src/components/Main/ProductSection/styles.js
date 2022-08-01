@@ -65,6 +65,10 @@ export const ProductsList = styled.ul`
     overflow-y: hidden; 
   }
 
+  @media(min-width: 1024px) {
+    overflow-x: hidden; 
+  }
+
 
   & .product {
     & > img {
