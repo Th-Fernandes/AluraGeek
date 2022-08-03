@@ -13,7 +13,7 @@ export const supabaseAuth = {
     const { user, session, error: signInError } = await supabase.auth.signIn({email, password});
 
     if(signInError) {
-      handleError && handleError(signInError);
+      handleError && handleError(signInError.message);
       throw new Error(`erro ao realizar signIn. MESSAGE: ${signInError.message} `);
     } else {
       thenDo && thenDo();

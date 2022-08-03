@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import colors from "utils/colors.json"
+import styled from "styled-components";
+import colors from "utils/colors.json";
 
 const StyledLogin = styled.form`
   width: min(42.3rem, 90%);
@@ -76,57 +76,51 @@ const StyledLogin = styled.form`
 
 `
 const ModalEmail = styled.section`
+  display: flex;  
+  justify-content: center;
+  align-items: end;
+  max-width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: 999;
   inset: 0;
-  background-color: rgba(0, 0,0 , 0.6);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
+  background-color: rgba(0, 0,0 , 0.5);
+
+  @media(min-width:768px) {
+    align-items: center;
+  }
 
   .modal-content {
-    max-width: 48.9rem;
-    background-color: ${colors.neutrals['white']};
-    border-radius: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 60rem;
     height: 30rem;
     padding: 3.2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
+    background-color: ${colors.neutrals['white']};
+    border-radius: 1.6rem;
 
     & > article {
       & > h3 {
-        font-size: 3.5rem;
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
         margin-bottom: 1.2rem;
       }
   
       & > p {
-        font-size: 1.6rem;
-        line-height: 2.5rem
+        line-height: 2.5rem;
       }
     }
 
     & > button {
       width: min(30rem, 90%);
-      background-color: ${colors.primary.blue};
       height: 5rem;
       margin: 0 auto;
-      font-size: 2rem;
+      background-color: ${colors.primary.blue};
       color: ${colors.neutrals.white};
       font-weight: bold;
     }
   }
-
-  @media(max-width: 489px) {
-    align-items: end;
-
-    .modal-content {
-      border-radius: 6.4rem 6.4rem 0 0 ;
-    }
-  }
-
 `
 
 export { ModalEmail, StyledLogin}
