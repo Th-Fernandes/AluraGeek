@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
+import {supabaseAuth} from "helpers/supabase-auth-actions";
 import { DefaultLogButton, LogoffButton } from "./styles";
-import { supabase } from "utils/supabaseClient";
 
 export default function LoginButton() {
   const router = useRouter();
@@ -9,9 +9,10 @@ export default function LoginButton() {
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [actualPath, setActualPath] = useState();
 
-  function handleLogoff() {
-    supabase.auth.signOut();
-    router.push('/');
+  function handleSignOut() {
+    supabaseAuth.signOut({
+      thenDo: () => router.push('/')
+    })
   };
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function LoginButton() {
   }, [])
 
   useEffect(() => {
-    const hasUserSection = supabase.auth.user()
+    const hasUserSection = supabaseAuth.getUser()
 
     hasUserSection
       ? (setAccessRouter('/access/products'), setIsUserLogged(true))
@@ -31,7 +32,7 @@ export default function LoginButton() {
     <>
       {
         actualPath === '/access/products' && isUserLogged
-          ? <LogoffButton onClick={handleLogoff}> Sair </LogoffButton>
+          ? <LogoffButton onClick={handleSignOut}> Sair </LogoffButton>
           : (
             <DefaultLogButton
               onClick={() => { router.push(accessRouter) }}

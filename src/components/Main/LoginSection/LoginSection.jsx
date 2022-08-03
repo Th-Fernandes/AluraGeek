@@ -43,12 +43,12 @@ export default function LoginSection() {
 
   return (
     <section
-      style={{
-        height: "47.3rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-      }}
+      // style={{
+      //   height: "47.3rem",
+      //   display: "flex",
+      //   alignItems: "center",
+      //   justifyContent: "center"
+      // }}
     >
 
       {
