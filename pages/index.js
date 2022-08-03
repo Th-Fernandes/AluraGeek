@@ -14,7 +14,7 @@ export default function Home() {
     supabaseDatabase.selectAll({
       inTable: 'products',
       thenDo: (data) => setProductsData(data),
-      errorHandler: (data,status) =>  setFetchDataErrorCode(status)
+      errorHandler: (status) =>  setFetchDataErrorCode(status)
     })
   }, [])
 

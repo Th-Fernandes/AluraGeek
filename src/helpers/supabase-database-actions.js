@@ -7,11 +7,10 @@ export const supabaseDatabase = {
       .select('*')
 
     if (error || status >= 400) {
-      errorHandler(data, status);
-      throw new Error('d');
+      errorHandler && errorHandler(status);
+      throw new Error(`erro ao capturar dados do banco da supabase. CÓDIGO:${error.code}, STATUS:${status}`);
     } else {
       thenDo(data);
     }
-
   }
 }
