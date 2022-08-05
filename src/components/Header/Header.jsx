@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
 import Image from 'next/image';
+import Link from "next/link"
 import { StyledHeader } from "./styles";
 import SearchBar from "./SearchBar/SearchBar";
 import LoginButton from "./LoginButton/LoginButton";
@@ -31,12 +32,16 @@ export default function Header() {
   return (
     <StyledHeader>
       <div className='search-container'>
-        <img
-          className='logo'
-          onClick={() => router.push('/')}
-          src={logo.src}
-          alt="logo da AluraGeek: um controle azul de console, acompanhado da palavra 'Alura' em azul e 'Geek' em preto. "
-        />
+        <Link href="/">
+          <a>
+            <img
+              className='logo'
+              src={logo.src}
+              alt="voltar ao menu principal "
+            />
+          </a>
+        </Link>
+
         <SearchBar />
       </div>
       <LoginButton />

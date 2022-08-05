@@ -48,12 +48,12 @@ export default function ProductSection({productData}) {
         <ProductsList gridColumns={products.length}>
           {
             products &&
-            products.map(({name, thumb, alt, price}, index) => {
+            products.map(({name, thumb, alt, price}) => {
               return (
                 <li
                   onClick={() => router.push(`./product?name=${name}`)}
                   className="product"
-                  key={index}>
+                  key={`${name}-${price}`}>
 
                   <img
                     src={thumb}
