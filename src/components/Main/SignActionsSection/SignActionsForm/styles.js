@@ -32,6 +32,7 @@ export const SignActionsFormContainer = styled.form`
       }
 
       & > input {
+        width: 100%;
         padding-left: 1.2rem;
         height: 6.313rem;
       }
@@ -50,16 +51,4 @@ export const SignActionsFormContainer = styled.form`
       }
     }
 
-    & > button {
-      width: 100%;
-      background-color: ${colors.primary["blue"]};
-      color: ${colors.neutrals["white"]};
-      height: 6.2rem;
-      font-size: 1.4rem;
-      font-weight: 600;
-
-      @media(min-width: 1024px) {
-        font-size: 1.8rem;
-      }
-    }
 `

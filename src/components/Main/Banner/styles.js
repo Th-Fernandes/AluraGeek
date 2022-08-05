@@ -39,11 +39,11 @@ export const BannerContainer = styled.section`
     }
 
     & > button {
+      max-width: 12rem;
       height: 5.1rem;
       padding: 0 1.6rem;
       font-size: 1.4rem;
-      background-color: ${colors.primary["blue"]};
-      color: ${colors.neutrals["white"]};
+      font-weight: 400;
     } 
   }
 

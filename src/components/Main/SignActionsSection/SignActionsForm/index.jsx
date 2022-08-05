@@ -1,6 +1,7 @@
+import { BrandButton } from "components/utils/BrandButton";
 import { useState } from "react";
 import {SignActionsFormContainer} from "./styles"
-export function SignActionsForm({handleSignIn, handleSignUp, authError, signType}) {
+export function SignActionsForm({handleSignIn, handleSignUp, authError, signType, isInputSubmitted}) {
   const [inputData, setInputData] = useState();
 
   function handleSubmitUserInput(event) {
@@ -44,7 +45,7 @@ export function SignActionsForm({handleSignIn, handleSignUp, authError, signType
           <label htmlFor="loginEmail">Entre com sua senha</label>
         </p>
 
-        <button type="submit"> Entrar </button>
+        <BrandButton textContent="Entrar" isLoading={isInputSubmitted} />
       </fieldset>
     </SignActionsFormContainer>
   )

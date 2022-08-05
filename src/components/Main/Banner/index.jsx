@@ -1,3 +1,4 @@
+import { BrandButton } from "components/utils/BrandButton/index.jsx"
 import {BannerContainer} from "./styles.js"
 
 export function Banner() {
@@ -7,7 +8,7 @@ export function Banner() {
         <h1>Dezembro Promocional</h1>
         <p>Produtos selecionados com 33% de desconto</p>
 
-        <button>ver consoles</button>
+        <BrandButton textContent="ver consoles"/>
       </article>
     </BannerContainer>
   )

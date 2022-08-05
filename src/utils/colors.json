@@ -9,6 +9,7 @@
   },
   "primary": {
     "blue": "#2A7AE4",
+    "blue-hover": "#5595E9",
     "blue-light": "#EAF2FD",
     "red": "#cf142b"
   }

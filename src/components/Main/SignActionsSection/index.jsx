@@ -9,24 +9,39 @@ import { TogglerSignType } from './TogglerSignType/index.jsx';
 export function SignActionsSection() {
   const router = useRouter();
   const [signType, setSignType] = useState('signIn');
+  const [isInputSubmitted , setIsInputSubmitted] = useState(false);
   const [authError, setAuthError] = useState();
   const [isUserSignedUp, setIsUserSignedUp] = useState(false);
 
   async function handleSignIn({ email, password }) {
+    setIsInputSubmitted(true)
+
     supabaseAuth.signIn({
       email,
       password,
-      handleError: (signInError) => setAuthError(signInError),
-      thenDo: () => router.push('/')
+      handleError: (signInError) => {
+        setIsInputSubmitted(false)
+        setAuthError(signInError) 
+      },
+      thenDo: () => {
+        setIsInputSubmitted(false)
+        router.push('/')
+      }
     })
+    
   }
 
   async function handleSignUp({ email, password }) {
+    setIsInputSubmitted(true)
+
     supabaseAuth.signUp({
       email,
       password,
       handleError: (signUpError) => setAuthError(signUpError),
-      thenDo: () => setIsUserSignedUp(true)
+      thenDo: () => {
+        setIsInputSubmitted(false) 
+        setIsUserSignedUp(true)
+      }
     })
   }
 
@@ -37,6 +52,7 @@ export function SignActionsSection() {
         handleSignUp={handleSignUp}
         authError={authError}
         signType={signType}
+        isInputSubmitted={isInputSubmitted}
       />
 
       <TogglerSignType 
