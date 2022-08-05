@@ -14,21 +14,22 @@ export default function ProductSection({productData}) {
   };
 
   useEffect(() => {
-    function productRender()  {
-      const screenWidth = window.innerWidth
+    function setDisplayableProducts()  {
+      const { innerWidth } = window;
 
-      if (screenWidth < 768  ) renderProducts(4)
-      if (screenWidth >= 1444) renderProducts(6)
+      if (innerWidth <  768 ) renderProducts(4);
+      if (innerWidth >= 768 ) renderProducts(5);
+      if (innerWidth >= 1444) renderProducts(6);
     }
 
-    productRender()
+    setDisplayableProducts();
     
     let time = null;
 
     window.addEventListener('resize', () => {
       clearTimeout(time);
 
-      time = setTimeout(() => productRender(), 150);
+      time = setTimeout(() => setDisplayableProducts(), 150);
     });
     
   }, [])
@@ -47,21 +48,21 @@ export default function ProductSection({productData}) {
         <ProductsList gridColumns={products.length}>
           {
             products &&
-            products.map((element, index) => {
+            products.map(({name, thumb, alt, price}, index) => {
               return (
                 <li
-                  onClick={() => router.push(`./product?name=${element.name}`)}
+                  onClick={() => router.push(`./product?name=${name}`)}
                   className="product"
                   key={index}>
 
                   <img
-                    src={element.thumb}
-                    alt={element.alt}
+                    src={thumb}
+                    alt={alt}
                   />
 
                   <span className="product-description">
-                    <p className="product-name">{element.name}</p>
-                    <p className="product-price">{element.price}</p>
+                    <p className="product-name">{name}</p>
+                    <p className="product-price">{price}</p>
                     <a> ver tudo </a>
                   </span>
                 </li>
