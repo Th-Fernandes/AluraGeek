@@ -1,11 +1,10 @@
 import {StyledProductForm, StyledAdmProduct} from  "./styles";
-import InputContent from "components/InputContent/InputContent";
+import InputContent from "components/utils/InputContent";
 import React from "react";
 import desktopAddItemIcon from "../../../../public/images/general/desktop-add-item.svg"
 import mobileAddItemIcon from "../../../../public/images/general/mobile-add-item.svg";
 
 export default function AddProductForm() {
-
   const [defaultImg, setDefaultImg] = React.useState(mobileAddItemIcon.src)
   const [inputUser, setInputUser] = React.useState()
 
@@ -59,29 +58,24 @@ export default function AddProductForm() {
         </div>
 
         <StyledAdmProduct className="adm-product-info">
-          <div>
             <InputContent 
               onChange={element => handleInputUser(element, 'name')}
               label="Nome do produto" 
               inputId="productNameAdm" 
               inputType="text"/>
-          </div>
-          <div>
+       
             <InputContent 
               onChange={element => handleInputUser(element, 'price')}
               label="Preço do produto" 
               inputId="productPriceAdm" 
               inputType="number"/>
-          </div>
-
-          <div>
+         
             <InputContent 
-            onChange={element => handleInputUser(element, 'description')}
+              onChange={element => handleInputUser(element, 'description')}
               label=" " 
               inputId="ProductDescAdm" 
               inputType="text" 
-              placeholder="Descrição do produto"/>
-          </div>
+              placeholder="Descrição do produto"/>      
         </StyledAdmProduct>
 
         <button 
