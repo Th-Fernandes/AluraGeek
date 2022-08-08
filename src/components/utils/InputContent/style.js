@@ -3,6 +3,8 @@ import colors from "utils/colors.json";
 
 export const InputContainer = styled.div`
   border-bottom: 1px solid #C8C8C8;
+  padding: 0.8rem 1.2rem;
+  background-color: ${colors.neutrals["white"]};
 
   :focus-within {
     outline: 2px solid ${colors.primary["blue"]};

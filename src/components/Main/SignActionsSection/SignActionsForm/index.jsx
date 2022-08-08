@@ -1,6 +1,8 @@
 import { BrandButton } from "components/utils/BrandButton";
 import { useState } from "react";
-import {SignActionsFormContainer} from "./styles"
+import {SignActionsFormContainer} from "./styles";
+import { getUserInput } from "helpers/get-user-input";
+
 export function SignActionsForm({handleSignIn, handleSignUp, authError, signType, isInputSubmitted}) {
   const [inputData, setInputData] = useState();
 
@@ -9,11 +11,6 @@ export function SignActionsForm({handleSignIn, handleSignUp, authError, signType
 
     if (signType === 'signIn') handleSignIn(inputData);
     if (signType === 'signUp') handleSignUp(inputData);
-  }
-
-  function handleUserInput(element) {
-    const {value, type} = element.target;
-    setInputData({ ...inputData, [type]: value });
   }
 
   return (
@@ -27,20 +24,22 @@ export function SignActionsForm({handleSignIn, handleSignUp, authError, signType
 
         <p className="login-input">
           <input
-            onChange={element => handleUserInput(element)}
+            onChange={element => getUserInput(element, setInputData)}
             type="email"
             id="loginEmail"
             placeholder="Escreva seu email"
+            name="email"
             required />
           <label htmlFor="loginEmail">Entre com seu email</label>
         </p>
 
         <p className="login-input">
           <input
-            onChange={element => handleUserInput(element)}
+            onChange={element => getUserInput(element, setInputData)}
             type="password"
             id="loginPassword"
             placeholder="Escreva sua senha"
+            name="password"
             required />
           <label htmlFor="loginEmail">Entre com sua senha</label>
         </p>
