@@ -1,59 +1,47 @@
-import ClientHeader from './Header'
-import { StyledClientSec } from './styles'
-import React from 'react'
-import ProductSection from "components/Main/ProductSection/ProductSection.jsx"
-import {useRouter} from "next/router"
-import {supabase} from "utils/supabaseClient";
-import DefaultError from '../DefaultError'
+import { useState, useEffect} from 'react';
+import { ClientProductsContainer } from './styles';
+import ClientHeader from './Header';
+import ProductSection from "components/Main/ProductSection/ProductSection.jsx";
+import {supabaseAuth} from "helpers/supabase-auth-actions";
+import {supabaseDatabase} from "helpers/supabase-database-actions";
+import DefaultError from 'components/Main/DefaultError';
 
 export default function ClientProducts() {
-  const [isLogged, setIslogged] = React.useState()
-  const [userProducts, setUserProducts] = React.useState()
-  const router = useRouter()
+  const [isLogged, setIslogged] = useState();
+  const [userProducts, setUserProducts] = useState();
 
-  React.useEffect(() => {
-    const loginSesssion = supabase.auth.session()
-    console.log(loginSesssion)
-
-    if(loginSesssion) {
-      setIslogged(true) 
-    } 
+  useEffect(() => {
+    supabaseAuth.getSessionInfo(() => setIslogged(true));
   }, [])
 
-  React.useEffect(async () => {
-    const { data, error } = await supabase
-      .from('userProducts')
-      .select('*')
-
-
-    if(isLogged) {
-      const loggedUserId = supabase.auth.session().user.id
-    const filterByUserId = data.filter(user => user.userId === loggedUserId )
-
-    setUserProducts(filterByUserId[0])
-    console.log(filterByUserId, supabase.auth.session().user.id)
-    }
-  }, [])
+  useEffect(() => {
+    if (isLogged) {
+      supabaseDatabase.selectAll({
+        inTable: 'userProducts',
+        thenDo: (data) => {
+          const sessionId = supabaseAuth.getSessionInfo().user.id;
+          const filterByUserId = data.filter(({userId}) => userId === sessionId);
+          setUserProducts(...filterByUserId);
+        }
+      });
+    };  
+  }, [isLogged])
 
   if(isLogged) {
     return (
-      <StyledClientSec>
+      <ClientProductsContainer>
         <ClientHeader />
           {
             userProducts &&
-            <ProductSection
-                title='Meus produtos'
-                productData={userProducts}
-              />
-          }
-        
-      </StyledClientSec>
+            <ProductSection productData={userProducts} />
+          }      
+      </ClientProductsContainer>
     )
   } else {
     return (
       <>
         <DefaultError 
-          title="Acesso negado :0"
+          title="Acesso negado :("
           description="Você precisa primeiro realizar o login para acessar essa página"
           button={{
             router: '/access/login',

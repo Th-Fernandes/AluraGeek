@@ -1,6 +1,6 @@
 import { InputContainer, StyledInput, StyledLabel } from "./style";
 
-export default function InputContent({inputId, label, inputType, placeholder, onChange, name}) {
+export function InputContent({inputId, label, inputType, placeholder, onChange, name}) {
   function verifyProps() {
     const props = [inputId, label, inputType];
 

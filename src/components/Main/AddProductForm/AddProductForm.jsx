@@ -2,7 +2,8 @@ import { useState } from "react";
 import { getUserInput } from "helpers/get-user-input";
 import { StyledProductForm, StyledAdmProduct } from  "./styles";
 import { DropProduct } from "components/Main/AddProductForm/DropProduct";
-import InputContent from "components/utils/InputContent";
+import {InputContent} from "components/utils/InputContent";
+import { TextAreaContent } from "components/utils/TextAreaContent";
 import { BrandButton } from "components/utils/BrandButton";
 
 export default function AddProductForm() {
@@ -33,15 +34,12 @@ export default function AddProductForm() {
               inputType="number"
               name="price"
             />
-         
-            <InputContent 
+
+            <TextAreaContent 
               onChange={element => getUserInput(element, setInputUser)}
-              label=" " 
-              inputId="ProductDescAdm" 
-              inputType="text" 
               placeholder="Descrição do produto"
               name="description"
-            />      
+             />
         </StyledAdmProduct>
 
         <BrandButton textContent="Adicionar produto"/>

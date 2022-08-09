@@ -1,8 +1,13 @@
 import { supabase } from "utils/supabaseClient";
 
 export const supabaseAuth = {
-  getSessionInfo() {
-    return supabase.auth.session();
+  getSessionInfo(thenDo) {
+    const hasSession = supabase.auth.session();
+
+    if (hasSession && thenDo) thenDo(hasSession);
+    if (hasSession) return hasSession;  
+    
+    return false;
   },
 
   getUser() {
