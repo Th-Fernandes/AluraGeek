@@ -1,7 +1,7 @@
 import { BrandButtonDefault, BrandButtonLoading } from "./styles";
 import loadingIcon from "../../../../public/images/general/loading-icon.svg";
 
-export function BrandButton({ textContent, isLoading }) {
+export function BrandButton({ textContent, isLoading, onClick }) {
   return (
     <>
       {
@@ -13,7 +13,7 @@ export function BrandButton({ textContent, isLoading }) {
           )
 
           : (
-            <BrandButtonDefault>
+            <BrandButtonDefault onClick={onClick}>
               {textContent}
             </BrandButtonDefault>
           )

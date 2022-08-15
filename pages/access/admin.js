@@ -1,7 +1,7 @@
 import Header from "components/Header/Header";
 import { useEffect, useState } from "react";
-import {supabaseAuth} from "helpers/supabase-auth-actions";
-import AddProductForm from "components/Main/AddProductForm/AddProductForm";
+import { supabaseAuth} from "helpers/supabase-auth-actions";
+import { AddProductForm} from "components/Main/AddProductForm/";
 import DefaultError from "components/Main/DefaultError";
 import Footer from "components/Footer/Footer";
 

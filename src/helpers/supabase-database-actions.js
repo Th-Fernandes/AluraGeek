@@ -10,7 +10,18 @@ export const supabaseDatabase = {
       handleError && handleError(status);
       throw new Error(`erro ao capturar dados do banco da supabase. CÓDIGO:${error.code}, STATUS:${status}`);
     } else {
-      thenDo(data);
+      thenDo && thenDo(data);
     }
+
+  return data;
+  },
+
+  async update({inTable, updatedData, match}) {
+    const { data, error } = await supabase
+      .from(inTable)
+      .update(updatedData)
+      .match(match);
+
+      if(error) console.error(error);
   }
 }

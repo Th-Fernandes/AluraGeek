@@ -3,8 +3,9 @@ import mobileAddItemIcon from "/public/images/general/mobile-add-item.svg";
 import { DropContainer } from "./style"
 import { useEffect, useState } from "react";
 
-export function DropProduct() {
+export function DropProduct({setUserProductImg}) {
   const [dropIcon, setDropIcon] = useState(/* img path */);
+
 
   useEffect(()=>{
     function changeDropIconByWidth() {
@@ -27,7 +28,7 @@ export function DropProduct() {
           <img src={dropIcon} alt="adicione aqui a imagem de seu produto." />
           <p>Adicionar uma imagem para o produto</p>
         </label>
-        <input type="file" />
+        <input type="file" onChange={event => setUserProductImg(event.target.files[0])} />
       </div>
 
       <div className="fileOption">
