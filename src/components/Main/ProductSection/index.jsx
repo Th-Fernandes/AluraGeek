@@ -1,9 +1,11 @@
-import { StyledProducts, ProductsList } from "./styles";
-import arrowIcon from "../../../../public/images/general/arrow.svg";
-import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
+import { StyledProducts, ProductsList } from "./styles";
+import arrowIcon from "/public/images/general/arrow.svg";
+import deleteIcon from "/public/images/general/lixeira.svg";
+import editIcon from "/public/images/general/editar.svg";
 
-export default function ProductSection({productData}) {
+export function ProductSection({productData, isEditable}) {
   const router = useRouter();
   let [products, setProducts] = useState([]);
 
@@ -55,10 +57,22 @@ export default function ProductSection({productData}) {
                   className="product"
                   key={`${name}-${price}`}>
 
-                  <img
-                    src={thumb}
-                    alt={alt}
-                  />
+                  <div className="product-img-container">
+                    {
+                      isEditable && (
+                        <div className='product-img-editable'>
+                          <img src={deleteIcon.src} alt="editar informações do produto" />
+                          <img src={editIcon.src} alt="excluir produto" />
+                        </div>
+                      )
+                    }
+
+                    <img
+                      className='product-img'
+                      src={thumb}
+                      alt={alt}
+                    />
+                  </div>
 
                   <span className="product-description">
                     <p className="product-name">{name}</p>

@@ -1,54 +1,22 @@
 import { useEffect, useState } from "react"
 import { supabase } from "utils/supabaseClient"
+import {supabaseDatabase} from "helpers/supabase-database-actions.js"
 
 export default () => {
-  const [userFile, setUserFile] = useState();
-  const [img, setImg] = useState([]);
 
-  useEffect(() => {
-    if (userFile) {
-      console.log(userFile)
-      async function insertFile() {
-        const { data, error } = await supabase.storage
-          .from('test')
-          .upload('public/avatar3.png', userFile)
-
-        if (error) console.error(error)
-      }
-
-      // insertFile()
-
-      async function downloadImg() {
-        const { data, error } = await supabase
-          .storage
-          .from('test')
-          .list('public', {
-            limit: 100,
-            offset: 0,
-            // sortBy: { column: 'name', order: 'asc' },
-          })
-
-        if(error) console.error(error)
-        
-        const imgURL = data.map(img => `https://amcfqzecuqgrdtixyrkv.supabase.co/storage/v1/object/public/test/public/${img.name}`)
-        setImg(imgURL)
-      }
-
-      // downloadImg()
-
-      }
-
-  }, [userFile])
+  useEffect(async () => {
+    console.log(
+       await supabaseDatabase.select({
+        inTable: 'userProducts',
+        select: 'items',
+        match: {userId: '8343cafe-8f88-40af-98ec-c31f30eea5c3'}
+      })
+    )
+  }, [])
 
   return (
     <>
       <input type="file" onChange={(event) => setUserFile(event.target.files[0])} />
-      {
-        img &&
-        img.map(data => (
-          <img style={{width: '300px'}} src={data} key={data} />
-        ))
-      }
     </>
   )
 }

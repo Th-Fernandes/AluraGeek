@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import { ClientProductsContainer } from './styles';
 import ClientHeader from './Header';
-import ProductSection from "components/Main/ProductSection/ProductSection.jsx";
+import {ProductSection} from "components/Main/ProductSection/index.jsx";
 import {supabaseAuth} from "helpers/supabase-auth-actions";
 import {supabaseDatabase} from "helpers/supabase-database-actions";
 import DefaultError from 'components/Main/DefaultError';
@@ -33,7 +33,7 @@ export default function ClientProducts() {
         <ClientHeader />
           {
             userProducts &&
-            <ProductSection productData={userProducts} />
+            <ProductSection productData={userProducts} isEditable={true} />
           }      
       </ClientProductsContainer>
     )

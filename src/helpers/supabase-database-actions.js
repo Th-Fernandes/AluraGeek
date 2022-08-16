@@ -13,7 +13,16 @@ export const supabaseDatabase = {
       thenDo && thenDo(data);
     }
 
-  return data;
+    return data;
+  },
+
+  async select({inTable, select, match}) {
+    const { data, error, status } = await supabase
+      .from(inTable)
+      .select(select)
+      .match(match /*{userId: '4444aaaa-4a55-40af-98ec-c31f30eea5c3'} */)
+
+    return data
   },
 
   async update({inTable, updatedData, match}) {
@@ -22,6 +31,6 @@ export const supabaseDatabase = {
       .update(updatedData)
       .match(match);
 
-      if(error) console.error(error);
+      if(error) throw new Error(error.message);
   }
 }

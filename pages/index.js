@@ -4,7 +4,7 @@ import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
 import {Banner} from "components/Main/Banner";
 import ErrorMessage from "components/Main/ErrorMessage/ErrorMessage";
-import ProductSection from "components/Main/ProductSection/ProductSection";
+import {ProductSection} from "components/Main/ProductSection";
 
 export default function Home() {
   const [productsData, setProductsData] = useState(/* JSON/array */)

@@ -71,21 +71,39 @@ export const ProductsList = styled.ul`
 
 
   & .product {
-    & > img {
+
+    .product-img-container {
       transition: 0.2s transform;
       cursor: pointer;
-      width: 15.6rem;
-      height: 17.4rem;
 
       @media(min-width: 1024px) {
         &:hover {
           transform: scale(1.05);
         }
       }
-      
 
-      @media(min-width: 768px) {
-        width: 16.4rem;
+      .product-img-editable {
+        display: flex;
+        justify-content: end;
+        gap: 2.4rem; 
+        position: relative;
+        top: 1rem;
+        right: 1rem;
+        z-index: 3;
+      }
+
+      .product-img {
+        margin-top: -1.9rem;         
+        width: 14rem;
+        height: 17.4rem;
+
+        @media(min-width: 768px) {
+          width: 16.4rem;
+        }
+
+        @media(min-width: 1024px) {
+          width: 17.6rem;
+        }
       }
     }
 
@@ -103,23 +121,6 @@ export const ProductsList = styled.ul`
         font-weight: 700;
         color: ${colors.primary["blue"]}
       }
-    }
-  }
-
-
-  @keyframes img {
-    0% {
-      border-radius: 0;
-      
-    }
-
-    50% {
-      border-radius: 6.4rem ; 
-      rotate: 90deg;
-    }
-
-    100% {
-      border-radius: 0;
     }
   }
 `

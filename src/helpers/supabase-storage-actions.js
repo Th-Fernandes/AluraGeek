@@ -6,7 +6,7 @@ export const supabaseStorage = {
       .from(bucket)
       .upload(bucketPath, userImg)
 
-    if (error) console.error(error);
+    if (error) throw new Error(error.message);
   },
 
   getPublicURL(bucket, bucketPath) {
@@ -15,6 +15,7 @@ export const supabaseStorage = {
       .from(bucket)
       .getPublicUrl(bucketPath);
         
+    if (error) throw new Error(error); 
     return  publicURL;
   }
 }

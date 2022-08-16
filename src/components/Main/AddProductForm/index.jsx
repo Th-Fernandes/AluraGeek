@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Router, { useRouter } from "next/router";
 import { supabaseStorage } from "helpers/supabase-storage-actions";
 import { supabaseAuth } from "helpers/supabase-auth-actions";
 import { supabaseDatabase } from "helpers/supabase-database-actions";
@@ -10,6 +11,7 @@ import { TextAreaContent } from "components/utils/TextAreaContent";
 import { BrandButton } from "components/utils/BrandButton";
 
 export function AddProductForm() {
+  const nextRouter = useRouter();
   const [inputUser, setInputUser] = useState({name: '', price: '', description: ''}/*OBJ*/);
   const [userProductImg, setUserProductImg] = useState(/* OBJ | event.target.files[i] */);
 
@@ -24,24 +26,30 @@ export function AddProductForm() {
 
     supabaseStorage.upload({ bucket: 'test', bucketPath, userImg: userProductImg});
 
-    function updateProductsOnDatabase() {
-      supabaseDatabase.selectAll({ inTable: 'userProducts' })
-        .then(data => data.filter(row => row.userId === id))
-        .then(filteredData => {
-          console.log(filteredData)
-          const { items, userId } = filteredData[0];
+    async function getProductsByUserId() {
+      const getUserProducts = await supabaseDatabase.select({
+        inTable: 'userProducts', 
+        select: 'items', match: {userId: id}
+      });
 
-          supabaseDatabase.update({
-            inTable: 'userProducts',
-            updatedData: {
-              items: [...items, { ...inputUser, thumb: supabaseStorage.getPublicURL('test', bucketPath)}]
-            },
-            match: { userId }
-          });
-        })
+      return getUserProducts[0].items;
+    }
+
+    async function updateProductsOnDatabase() {
+      const items = await getProductsByUserId();
+     
+      await supabaseDatabase.update({
+        inTable: 'userProducts',
+        updatedData: {
+          items: [...items, { ...inputUser, thumb: supabaseStorage.getPublicURL('test', bucketPath)}]
+        },
+        match: {userId: id}
+      });
     }
 
     updateProductsOnDatabase();
+    nextRouter.push('/access/products');
+    
   }
 
   return (
