@@ -10,7 +10,12 @@
   "primary": {
     "blue": "#2A7AE4",
     "blue-hover": "#5595E9",
-    "blue-light": "#EAF2FD",
-    "red": "#cf142b"
+    "blue-light": "#EAF2FD"
+  },
+  "buttons": {
+    "red": "#D94F30",
+    "red-hover": "#DE6449",
+    "grey": "#EDEBE9",
+    "grey-hover": "#F6F5F4"
   }
 }

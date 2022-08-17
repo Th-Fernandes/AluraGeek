@@ -1,4 +1,4 @@
-import { BrandButton } from "components/utils/BrandButton";
+import { BrandButton } from "components/utils/Buttons/BrandButton";
 import { useState } from "react";
 import {SignActionsFormContainer} from "./styles";
 import { getUserInput } from "helpers/get-user-input";

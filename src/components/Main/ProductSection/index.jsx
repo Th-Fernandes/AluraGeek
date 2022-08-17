@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
 import { StyledProducts, ProductsList } from "./styles";
+import { ProductActions } from './ProductActions';
 import arrowIcon from "/public/images/general/arrow.svg";
-import deleteIcon from "/public/images/general/lixeira.svg";
-import editIcon from "/public/images/general/editar.svg";
+import { NextLink } from 'components/utils/NextLink';
 
 export function ProductSection({productData, isEditable}) {
   const router = useRouter();
@@ -47,27 +47,19 @@ export function ProductSection({productData, isEditable}) {
           </span>
         </header>
 
-        <ProductsList gridColumns={products.length}>
+        <ProductsList gridColumns={products.length}  isEditable={isEditable}>
           {
             products &&
             products.map(({name, thumb, alt, price}) => {
               return (
-                <li
-                  onClick={() => router.push(`./product?name=${name}`)}
+                <li                
                   className="product"
                   key={`${name}-${price}`}>
 
                   <div className="product-img-container">
-                    {
-                      isEditable && (
-                        <div className='product-img-editable'>
-                          <img src={deleteIcon.src} alt="editar informações do produto" />
-                          <img src={editIcon.src} alt="excluir produto" />
-                        </div>
-                      )
-                    }
-
+                    { isEditable && <ProductActions/> }
                     <img
+                      onClick={() => router.push(`/product?name=${name}`)}
                       className='product-img'
                       src={thumb}
                       alt={alt}
@@ -77,7 +69,7 @@ export function ProductSection({productData, isEditable}) {
                   <span className="product-description">
                     <p className="product-name">{name}</p>
                     <p className="product-price">{price}</p>
-                    <a> ver tudo </a>
+                    <NextLink href={`/product?name=${name}`}>ver tudo</NextLink>
                   </span>
                 </li>
               )

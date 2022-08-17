@@ -8,7 +8,7 @@ import { StyledProductForm, StyledAdmProduct } from "./styles";
 import { DropProduct } from "components/Main/AddProductForm/DropProduct";
 import { InputContent } from "components/utils/InputContent";
 import { TextAreaContent } from "components/utils/TextAreaContent";
-import { BrandButton } from "components/utils/BrandButton";
+import { BrandButton } from "components/utils/Buttons/BrandButton";
 
 export function AddProductForm() {
   const nextRouter = useRouter();

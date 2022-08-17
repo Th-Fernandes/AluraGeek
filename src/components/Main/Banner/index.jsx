@@ -1,4 +1,4 @@
-import { BrandButton } from "components/utils/BrandButton/index.jsx"
+import { BrandButton } from "components/utils/Buttons/BrandButton/index.jsx"
 import {BannerContainer} from "./styles.js"
 
 export function Banner() {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { supabaseAuth } from "helpers/supabase-auth-actions";
 import { SignActionsContainer } from "./styles.js";
 import { SignActionsForm } from "components/Main/SignActionsSection/SignActionsForm";
-import { InfoModal } from 'components/Main/utils/InfoModal';
+import { InfoModal } from 'components/Main/utils/Modals/InfoModal';
 import { TogglerSignType } from './TogglerSignType/index.jsx';
 
 export function SignActionsSection() {

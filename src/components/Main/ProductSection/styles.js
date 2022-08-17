@@ -78,7 +78,7 @@ export const ProductsList = styled.ul`
 
       @media(min-width: 1024px) {
         &:hover {
-          transform: scale(1.05);
+          transform: ${({isEditable}) => !isEditable && "scale(1.05)"};
         }
       }
 
