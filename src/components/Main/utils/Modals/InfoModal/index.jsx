@@ -1,6 +1,6 @@
 import { BrandButton } from "components/utils/Buttons/BrandButton";
 import { useRouter } from "next/router";
-import { ModalContainer } from "../ModalContainer";
+import { ModalContainer } from "../ModalContainer.js";
 import { InfoModalContainer } from "./styles";
 
 export function InfoModal({title, textContent}) {

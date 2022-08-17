@@ -1,6 +1,6 @@
 import { NextLink } from "components/utils/NextLink";
-import {ModalContainer} from "components/main/utils/Modals/ModalContainer";
-import { ModalContent } from "components/main/utils/Modals/ModalContent";
+import {ModalContainer} from "components/main/utils/Modals/ModalContainer.js";
+import { ModalContent } from "components/main/utils/Modals/ModalContent.js";
 import Button from "components/utils/Buttons/DefaultButton";
 
 export function WarningModal({ title, textContent }) {
