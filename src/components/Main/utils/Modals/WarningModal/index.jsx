@@ -1,24 +1,22 @@
+import { useState } from "react";
 import { NextLink } from "components/utils/NextLink";
 import { ModalContainer } from "../ModalContainer.js";
 import { ModalContent } from "../ModalContent.js";
 import Button from "components/utils/Buttons/DefaultButton";
 
-export function WarningModal({ title, textContent }) {
+export function WarningModal({ title, textContent, setHasDeleteActionDone }) {
   const buttons = [
     {
-      textContent: 'cancelar',
+      textContent: 'Cancelar',
       bgColor: 'grey',
       color: 'black'
-    }, 
+    },
     {
       textContent: 'Deletar',
       bgColor: 'red',
       color: 'white'
     }
   ];
-
-
-
   return (
     <ModalContainer>
       <ModalContent className="modal-content">
@@ -28,11 +26,17 @@ export function WarningModal({ title, textContent }) {
           <p>{textContent}</p>
         </article>
 
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           {
-            buttons.map(({textContent, bgColor, color}) => (
+            buttons.map(({ textContent, bgColor, color }) => (
               <NextLink href="">
-                <Button style={{width: '15rem'}} bgColor={bgColor} color={color} >{textContent}</Button>
+                <Button
+                  onClick={() => textContent === 'Cancelar' && setHasDeleteActionDone(false)}
+                  style={{ width: '15rem' }}
+                  bgColor={bgColor}
+                  color={color} >
+                  {textContent}
+                </Button>
               </NextLink>
             ))
           }
