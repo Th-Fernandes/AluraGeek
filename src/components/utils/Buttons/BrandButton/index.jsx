@@ -14,7 +14,7 @@ export function BrandButton({ textContent, isLoading, onClick }) {
           )
 
           : (
-            <BrandButtonDefault bgColor="blue" onClick={onClick}>
+            <BrandButtonDefault bgColor="blue" color="white" onClick={onClick}>
               {textContent}
             </BrandButtonDefault>
           )

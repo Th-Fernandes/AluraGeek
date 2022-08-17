@@ -30,12 +30,12 @@ const DefaultHeaderButton = styled.button`
 `
 
 const LogoffButton = styled(DefaultHeaderButton)`
-  border: 1px solid ${colors.primary["red"]};
-  color: ${colors.primary.red};
+  border: 1px solid ${colors.buttons["red"]};
+  color: ${colors.buttons.red};
   font-weight: bold;
 
   &:hover {
-    background-color: ${colors.primary.red};
+    background-color: ${colors.buttons.red};
     color: ${colors.neutrals.white}; 
   }
 `
