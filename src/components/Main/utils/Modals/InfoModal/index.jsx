@@ -1,14 +1,15 @@
 import { BrandButton } from "components/utils/Buttons/BrandButton";
 import { useRouter } from "next/router";
 import { ModalContainer } from "../ModalContainer.js";
-import { InfoModalContainer } from "./styles";
+import { ModalContent } from "../ModalContent.js";
+
 
 export function InfoModal({title, textContent}) {
   const router = useRouter();
 
   return (
     <ModalContainer>
-      <InfoModalContainer className="modal-content">
+      <ModalContent className="modal-content">
         <article>
           <h3>{title}</h3>
 
@@ -16,7 +17,7 @@ export function InfoModal({title, textContent}) {
         </article>
 
         <BrandButton onClick={() => router.push('/')} textContent="ok"/>
-      </InfoModalContainer>
+      </ModalContent>
     </ModalContainer>
   )
 }
