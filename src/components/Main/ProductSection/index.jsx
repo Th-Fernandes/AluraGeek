@@ -1,12 +1,9 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
 import { StyledProducts, ProductsList } from "./styles";
-import { ProductActions } from './ProductActions';
+import { ProductDescription } from './ProductDescription';
 import arrowIcon from "/public/images/general/arrow.svg";
-import { NextLink } from 'components/utils/NextLink';
 
 export function ProductSection({productData, isEditable}) {
-  const router = useRouter();
   let [products, setProducts] = useState([]);
 
   function renderProducts(quantity){
@@ -47,36 +44,23 @@ export function ProductSection({productData, isEditable}) {
           </span>
         </header>
 
-        <ProductsList gridColumns={products.length}  isEditable={isEditable}>
-          {
+        <ProductsList gridColumns={products.length}>
+          { 
             products &&
             products.map(({name, thumb, alt, price}) => {
               return (
-                <li                
-                  className="product"
-                  key={`${name}-${price}`}>
-
-                  <div className="product-img-container">
-                    { isEditable && <ProductActions/> }
-                    <img
-                      onClick={() => router.push(`/product?name=${name}`)}
-                      className='product-img'
-                      src={thumb}
-                      alt={alt}
-                    />
-                  </div>
-
-                  <span className="product-description">
-                    <p className="product-name">{name}</p>
-                    <p className="product-price">{price}</p>
-                    <NextLink href={`/product?name=${name}`}>ver tudo</NextLink>
-                  </span>
-                </li>
+                <ProductDescription 
+                  name={name}
+                  price={price}
+                  thumb={thumb}
+                  alt={alt}  
+                  isEditable={isEditable}
+                  key={`${name}-${price}`}
+                />
               )
             })
           }
         </ProductsList>
-      
     </StyledProducts>
   )
 }

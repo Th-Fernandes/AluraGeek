@@ -58,7 +58,7 @@ export const ProductsList = styled.ul`
   overflow-x: scroll; 
 
   @media(min-width: 500px) {
-    grid-template-columns: repeat(  ${(props) => props.gridColumns} , 17.6rem);
+    grid-template-columns: repeat(${(props) => props.gridColumns} , 17.6rem);
   }
 
   @media(min-width: 768px) {
@@ -67,60 +67,5 @@ export const ProductsList = styled.ul`
 
   @media(min-width: 1024px) {
     overflow-x: hidden; 
-  }
-
-
-  & .product {
-
-    .product-img-container {
-      transition: 0.2s transform;
-      cursor: pointer;
-
-      @media(min-width: 1024px) {
-        &:hover {
-          transform: ${({isEditable}) => !isEditable && "scale(1.05)"};
-        }
-      }
-
-      .product-img-editable {
-        display: flex;
-        justify-content: end;
-        gap: 2.4rem; 
-        position: relative;
-        top: 1rem;
-        right: 1rem;
-        z-index: 3;
-      }
-
-      .product-img {
-        margin-top: -1.9rem;         
-        width: 14rem;
-        height: 17.4rem;
-
-        @media(min-width: 768px) {
-          width: 16.4rem;
-        }
-
-        @media(min-width: 1024px) {
-          width: 17.6rem;
-        }
-      }
-    }
-
-    & .product-description {
-      & .product-name {
-        font-weight: 500;
-        font-size: 1.4rem;
-      }
-
-      & .product-price {
-        font-weight: 700;
-      }
-
-      & > a {
-        font-weight: 700;
-        color: ${colors.primary["blue"]}
-      }
-    }
   }
 `

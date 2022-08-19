@@ -4,6 +4,11 @@ import pallet from "utils/colors.json";
 export const StyledHeader = styled.article`
   padding: 3.2rem;
 
+  @media (min-width: 1024px) {
+    padding-inline: 0;
+    padding-block: 6.4rem 0;
+  }
+
   & > h1 {
     font-size: 2.2rem;
   }
@@ -29,7 +34,5 @@ export const StyledHeader = styled.article`
     }  
   }
 
-  @media(min-width: 1136px) {
-    padding: 6.4rem 0 6.4rem;
-  }
+  
 `
