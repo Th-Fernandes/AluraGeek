@@ -1,0 +1,12 @@
+[
+  {
+    "textContent": "Cancelar",
+    "bgColor": "grey",
+    "color": "black"
+  },
+  {
+    "textContent": "Deletar",
+    "bgColor": "red",
+    "color": "white"
+  }
+]

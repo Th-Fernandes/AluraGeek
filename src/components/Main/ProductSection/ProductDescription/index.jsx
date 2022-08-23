@@ -9,7 +9,7 @@ export function ProductDescription({name, price, thumb, alt, isEditable}) {
   return (
     <ProductDescriptionContainer isEditable={isEditable}>
       <div className="product-img-container">
-        {isEditable && <ProductActions />}
+        {isEditable && <ProductActions productInfo={{name, price}} />}
         <img
           onClick={() => router.push(`/product?name=${name}`)}
           className='product-img'

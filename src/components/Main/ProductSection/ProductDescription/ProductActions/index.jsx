@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { NextLink } from "components/utils/NextLink";
-import deleteIcon from "/public/images/general/lixeira.svg";
-import editIcon from "/public/images/general/editar.svg";
-import { WarningModal } from "components/Main/utils/Modals/WarningModal";
 import { ProductActionsContainer } from "./styles";
+import { WarningModal } from "components/Main/utils/Modals/WarningModal";
+import editIcon from "/public/images/general/editar.svg";
+import deleteIcon from "/public/images/general/lixeira.svg";
 
-export function ProductActions () {
+export function ProductActions({productInfo}) {
   const [hasDeleteActionDone, setHasDeleteActionDone] = useState(false);
 
   return (
@@ -22,6 +22,7 @@ export function ProductActions () {
             title="Tem certeza?" 
             textContent="Deseja mesmo excluir seu produto? essa ação não pode ser desfeita."
             setHasDeleteActionDone={setHasDeleteActionDone}
+            productInfo={productInfo}
           />)
       }
     </ProductActionsContainer>
