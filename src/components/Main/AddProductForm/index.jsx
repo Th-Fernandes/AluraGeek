@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Router, { useRouter } from "next/router";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import { supabaseStorage } from "helpers/supabase-storage-actions";
 import { supabaseAuth } from "helpers/supabase-auth-actions";
 import { supabaseDatabase } from "helpers/supabase-database-actions";
@@ -15,16 +15,12 @@ export function AddProductForm() {
   const [inputUser, setInputUser] = useState({name: '', price: '', description: ''}/*OBJ*/);
   const [userProductImg, setUserProductImg] = useState(/* OBJ | event.target.files[i] */);
 
-  useEffect(() => {console.log(inputUser)}, [inputUser])
-
   function handleSubmitUserInput(event) {
     event.preventDefault();
 
     const { id } = supabaseAuth.getUser();
     const { name } = inputUser;
     const bucketPath = `${id}/${name.replace(' ', '-')}-${id}.png`; 
-
-    supabaseStorage.upload({ bucket: 'test', bucketPath, userImg: userProductImg});
 
     async function getProductsByUserId() {
       const getUserProducts = await supabaseDatabase.select({
@@ -47,9 +43,9 @@ export function AddProductForm() {
       });
     }
 
+    supabaseStorage.upload({ bucket: 'test', bucketPath, userImg: userProductImg});
     updateProductsOnDatabase();
     nextRouter.push('/access/products');
-    
   }
 
   return (

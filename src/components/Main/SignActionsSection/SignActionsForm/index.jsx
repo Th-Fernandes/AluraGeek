@@ -1,9 +1,15 @@
 import { BrandButton } from "components/utils/Buttons/BrandButton";
 import { useState } from "react";
-import {SignActionsFormContainer} from "./styles";
+import { SignActionsFormContainer } from "./styles";
 import { getUserInput } from "helpers/get-user-input";
+import { InputContent } from "components/utils/InputContent";
 
-export function SignActionsForm({handleSignIn, handleSignUp, authError, signType, isInputSubmitted}) {
+/* 
+  troca a estrutura <p> <input/> </p> para o component InputContent
+  remover a estilização referente a antiga estrutura
+*/
+
+export function SignActionsForm({ handleSignIn, handleSignUp, authError, signType, isInputSubmitted }) {
   const [inputData, setInputData] = useState();
 
   function handleSubmitUserInput(event) {
@@ -22,28 +28,25 @@ export function SignActionsForm({handleSignIn, handleSignUp, authError, signType
 
         {authError && <small className="auth-error">{authError}</small>}
 
-        <p className="login-input">
-          <input
-            onChange={element => getUserInput(element, setInputData)}
-            type="email"
-            id="loginEmail"
-            placeholder="Escreva seu email"
-            name="email"
-            required />
-          <label htmlFor="loginEmail">Entre com seu email</label>
-        </p>
+        <InputContent
+          onChange={element => getUserInput(element, setInputData)}
+          inputId="loginEmail"
+          label="Escreva seu email"
+          inputType="email"
+          name="email"
+          placeholder="exemplo@gmail.com"
+          required={true}
+        />
 
-        <p className="login-input">
-          <input
-            onChange={element => getUserInput(element, setInputData)}
-            type="password"
-            id="loginPassword"
-            placeholder="Escreva sua senha"
-            name="password"
-            required />
-          <label htmlFor="loginEmail">Entre com sua senha</label>
-        </p>
-
+        <InputContent
+          onChange={element => getUserInput(element, setInputData)}
+          inputId="loginPassword"
+          label="Escreva sua senha"
+          inputType="password"
+          placeholder="********"
+          name="password"
+          required={true}
+        />
         <BrandButton textContent="Entrar" isLoading={isInputSubmitted} />
       </fieldset>
     </SignActionsFormContainer>

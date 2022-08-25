@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import colors from "utils/colors.json";
+// import colors from "utils/colors.json";
 
 export const SignActionsFormContainer = styled.form`
   width: min(42.3rem, 90%);
@@ -9,9 +9,9 @@ export const SignActionsFormContainer = styled.form`
 
     & > legend {
       margin-bottom: 1.6rem;
-      text-align: center;
-      font-size: 1.8rem;
+      font-size: 1.8rem ;
       font-weight: 700;
+      text-align: center;
     }
 
     & > .auth-error {
@@ -23,32 +23,13 @@ export const SignActionsFormContainer = styled.form`
       font-size: 1.25rem;
     }
 
-    & > .login-input { 
-      background-color: ${colors.neutrals["white"]};
+    & > div {
+      /* <InputContent */
       margin-bottom: 1.6rem;
 
       @media(min-width: 1024px) {
         margin-bottom: 2.4rem;
       }
-
-      & > input {
-        width: 100%;
-        padding-left: 1.2rem;
-        height: 6.313rem;
-      }
-
-      & > label {
-        opacity: 0;
-        display: none;
-      }
-
-      & > input[type="password"] {
-        font-size: 2.4rem;
-
-        &::placeholder {
-          font-size: 1.4rem;
-        }
-      }
     }
-
+  }
 `

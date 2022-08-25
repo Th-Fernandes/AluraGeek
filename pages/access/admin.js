@@ -17,7 +17,7 @@ export default function AdminPage() {
 
     return (
       <>
-        <Header adminVer={true}/>
+        <Header/>
 
         <main>
           {

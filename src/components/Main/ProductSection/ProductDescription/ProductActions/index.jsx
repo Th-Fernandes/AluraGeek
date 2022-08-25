@@ -12,7 +12,7 @@ export function ProductActions({productInfo}) {
     <ProductActionsContainer>
       <img onClick={() => setHasDeleteActionDone(true)} src={deleteIcon.src} alt="excluir produto" />      
       
-      <NextLink href="/access/edit">
+      <NextLink href={`/access/edit?name=${productInfo.name}&price=${productInfo.price}`}>
         <img src={editIcon.src} alt="editar informações do produto" />
       </NextLink>
 

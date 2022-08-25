@@ -1,8 +1,8 @@
 import { InputContainer, StyledInput, StyledLabel } from "./style";
 
-export function InputContent({inputId, label, inputType, placeholder, onChange, name}) {
+export function InputContent({inputId, label, name, required, inputType, placeholder, onChange, }) {
   function verifyProps() {
-    const props = [inputId, label, inputType];
+    const props = [inputId, label, inputType, name];
 
     props.forEach(prop => {
       if (!prop) throw new Error(`
@@ -10,6 +10,7 @@ export function InputContent({inputId, label, inputType, placeholder, onChange, 
       - inputId
       - label
       - inputType
+      - name
      `) 
     })
   }
@@ -27,6 +28,7 @@ export function InputContent({inputId, label, inputType, placeholder, onChange, 
         id={inputId}
         placeholder={placeholder} 
         name={name}
+        required={required}
       />
     </InputContainer>
   )
