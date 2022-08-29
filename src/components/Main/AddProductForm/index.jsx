@@ -9,10 +9,11 @@ import { DropProduct } from "components/Main/AddProductForm/DropProduct";
 import { InputContent } from "components/utils/InputContent";
 import { TextAreaContent } from "components/utils/TextAreaContent";
 import { BrandButton } from "components/utils/Buttons/BrandButton";
+import { supabase } from "utils/supabaseClient";
 
 export function AddProductForm() {
   const nextRouter = useRouter();
-  const [inputUser, setInputUser] = useState({name: '', price: '', description: ''}/*OBJ*/);
+  const [inputUser, setInputUser] = useState({ name: '', price: '', description: '' }/*OBJ*/);
   const [userProductImg, setUserProductImg] = useState(/* OBJ | event.target.files[i] */);
 
   function handleSubmitUserInput(event) {
@@ -20,30 +21,43 @@ export function AddProductForm() {
 
     const { id } = supabaseAuth.getUser();
     const { name } = inputUser;
-    const bucketPath = `${id}/${name.replace(' ', '-')}-${id}.png`; 
+    const bucketPath = `${id}/${name.replace(' ', '-')}-${id}.png`;
+    const table = 'userProducts'
 
     async function getProductsByUserId() {
       const getUserProducts = await supabaseDatabase.select({
-        inTable: 'userProducts', 
-        select: 'items', match: {userId: id}
-      });
+        inTable: table,
+        select: 'items', match: { userId: id },
+      }).then((data) => data.length > 0 ? data[0].items : false)
 
-      return getUserProducts[0].items;
+      console.log(getUserProducts)
+      if (getUserProducts) return getUserProducts;
+
+      async function createTableFirstTime() {
+        await supabaseDatabase.insert({
+          inTable: table,
+          insert: { userId: id, items: [] }
+        });
+
+        return [];
+      }
+
+      return createTableFirstTime();
     }
 
     async function updateProductsOnDatabase() {
       const items = await getProductsByUserId();
-     
+
       await supabaseDatabase.update({
-        inTable: 'userProducts',
+        inTable: table,
         updatedData: {
-          items: [...items, { ...inputUser, thumb: supabaseStorage.getPublicURL('test', bucketPath)}]
+          items: [...items, { ...inputUser, thumb: supabaseStorage.getPublicURL('test', bucketPath) }]
         },
-        match: {userId: id}
+        match: { userId: id }
       });
     }
 
-    supabaseStorage.upload({ bucket: 'test', bucketPath, userImg: userProductImg});
+    supabaseStorage.upload({ bucket: 'test', bucketPath, userImg: userProductImg });
     updateProductsOnDatabase();
     nextRouter.push('/access/products');
   }
@@ -81,7 +95,7 @@ export function AddProductForm() {
           />
         </StyledAdmProduct>
 
-        <BrandButton textContent="Adicionar produto"/>
+        <BrandButton textContent="Adicionar produto" />
       </fieldset>
     </StyledProductForm>
   )

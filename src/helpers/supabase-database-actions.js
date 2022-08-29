@@ -31,6 +31,13 @@ export const supabaseDatabase = {
       .update(updatedData)
       .match(match);
 
+      console.log(error)
       if(error) throw new Error(error.message);
+  },
+
+  async insert({inTable, insert}) {
+    const { data, error } = await supabase
+      .from(inTable) /* STRING */
+      .insert(insert) /* OBJ */
   }
 }

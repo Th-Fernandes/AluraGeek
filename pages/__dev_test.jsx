@@ -5,13 +5,15 @@ import {supabaseDatabase} from "helpers/supabase-database-actions.js"
 export default () => {
 
   useEffect(async () => {
-    console.log(
-       await supabaseDatabase.select({
-        inTable: 'userProducts',
-        select: 'items',
-        match: {userId: '8343cafe-8f88-40af-98ec-c31f30eea5c3'}
-      })
-    )
+    const userId = supabase.auth.user().id
+    console.log(userId)
+    const { data, error } = await supabase
+      .from('userProducts')
+      .select()
+      .match({userId})
+    if(error) console.error(error)
+    console.log(data)
+
   }, [])
 
   return (
