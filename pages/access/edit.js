@@ -60,14 +60,11 @@ export default function EditPage() {
   useEffect(async () => {
     if(isEditedDataSubmitted) {
       const {id} = supabaseAuth.getUser();
+      const [inTable, select, match] = ['userProducts', 'items', {userId: id}]
 
       async function getUserProducts() {
-        return await supabaseDatabase.select({
-          inTable: 'userProducts', 
-          select: 'items', 
-          match: {userId: id}
-        })  
-        .then(data => data[0].items );
+        return await supabaseDatabase.select({inTable, select, match})  
+          .then(data => data[0].items );
       }
 
       async function replaceProductData(getProducts) {
@@ -77,7 +74,7 @@ export default function EditPage() {
           const isNameMatched = product.name === queryStringValues.name;
           const isPriceMatched = product.price == queryStringValues.price;
 
-          if( isNameMatched && isPriceMatched ) return {
+          if(isNameMatched && isPriceMatched) return {
             ...inputUserEditedData,
             thumb: product.thumb
           }
@@ -90,9 +87,9 @@ export default function EditPage() {
         const updatedData = await replaceProductData(getUserProducts);
 
         supabaseDatabase.update({
-          inTable: 'userProducts',
-          updatedData: {items: updatedData},
-          match: {userId: id}
+          inTable, 
+          match,
+          updatedData: {items: updatedData}
         }) 
       } 
 
@@ -108,7 +105,8 @@ export default function EditPage() {
         {
           isLogged 
             ? (
-              <form onSubmit={(event) => handleSubmit(event)}>
+              <>
+                <form onSubmit={(event) => handleSubmit(event)}>
                 nome do produto
                 <input onChange={(event) => handleSetInputEdited(event, 'name')} />
                 preço do produto
@@ -118,6 +116,8 @@ export default function EditPage() {
 
                 <button>enviar</button>
               </form>
+              <AddProductForm/>
+              </>
             )
             : <DefaultError
                 title="Acesso negado :0"

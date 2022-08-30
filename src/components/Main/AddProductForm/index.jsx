@@ -3,13 +3,7 @@ import { useRouter } from "next/router";
 import { supabaseStorage } from "helpers/supabase-storage-actions";
 import { supabaseAuth } from "helpers/supabase-auth-actions";
 import { supabaseDatabase } from "helpers/supabase-database-actions";
-import { getUserInput } from "helpers/get-user-input";
-import { StyledProductForm, StyledAdmProduct } from "./styles";
-import { DropProduct } from "components/Main/AddProductForm/DropProduct";
-import { InputContent } from "components/utils/InputContent";
-import { TextAreaContent } from "components/utils/TextAreaContent";
-import { BrandButton } from "components/utils/Buttons/BrandButton";
-import { supabase } from "utils/supabaseClient";
+import { ProductForm } from "components/main/utils/ProductForm";
 
 export function AddProductForm() {
   const nextRouter = useRouter();
@@ -22,12 +16,13 @@ export function AddProductForm() {
     const { id } = supabaseAuth.getUser();
     const { name } = inputUser;
     const bucketPath = `${id}/${name.replace(' ', '-')}-${id}.png`;
-    const table = 'userProducts'
+    const [inTable, match] = ['userProducts', { userId: id }]
 
     async function getProductsByUserId() {
       const getUserProducts = await supabaseDatabase.select({
-        inTable: table,
-        select: 'items', match: { userId: id },
+        inTable,
+        select: 'items', 
+        match,
       }).then((data) => data.length > 0 ? data[0].items : false)
 
       console.log(getUserProducts)
@@ -35,7 +30,7 @@ export function AddProductForm() {
 
       async function createTableFirstTime() {
         await supabaseDatabase.insert({
-          inTable: table,
+          inTable,
           insert: { userId: id, items: [] }
         });
 
@@ -47,13 +42,12 @@ export function AddProductForm() {
 
     async function updateProductsOnDatabase() {
       const items = await getProductsByUserId();
+      const thumbUrl = supabaseStorage.getPublicURL('test', bucketPath)
 
       await supabaseDatabase.update({
-        inTable: table,
-        updatedData: {
-          items: [...items, { ...inputUser, thumb: supabaseStorage.getPublicURL('test', bucketPath) }]
-        },
-        match: { userId: id }
+        inTable,
+        match,
+        updatedData: { items: [...items, { ...inputUser, thumb: thumbUrl  }] },
       });
     }
 
@@ -63,40 +57,10 @@ export function AddProductForm() {
   }
 
   return (
-    <StyledProductForm
-      onSubmit={event => handleSubmitUserInput(event)}
-    >
-      <fieldset>
-        <legend>Adicionar novo produto</legend>
-
-        <DropProduct setUserProductImg={setUserProductImg} />
-
-        <StyledAdmProduct className="adm-product-info">
-          <InputContent
-            onChange={element => getUserInput(element, setInputUser)}
-            label="Nome do produto"
-            inputId="productNameAdm"
-            inputType="text"
-            name="name"
-          />
-
-          <InputContent
-            onChange={element => getUserInput(element, setInputUser)}
-            label="Preço do produto"
-            inputId="productPriceAdm"
-            inputType="number"
-            name="price"
-          />
-
-          <TextAreaContent
-            onChange={element => getUserInput(element, setInputUser)}
-            placeholder="Descrição do produto"
-            name="description"
-          />
-        </StyledAdmProduct>
-
-        <BrandButton textContent="Adicionar produto" />
-      </fieldset>
-    </StyledProductForm>
+    <ProductForm 
+      onSubmit={event => handleSubmitUserInput(event)} 
+      setInputUser={setInputUser}
+      setUserProductImg={setUserProductImg}
+    />
   )
 }
