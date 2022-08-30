@@ -23,12 +23,26 @@ export default function EditPage() {
   const [isEditedDataSubmitted, setIsEditedDataSubmited] = useState(false)
   //
 
+  function handleSetInputEdited(event, inputName) {
+    setInputUserEditedData(actualState => {
+      return {
+        ...actualState,
+      [inputName]: event.target.value
+      }
+    })
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    setIsEditedDataSubmited(true)
+  }
+
   useEffect(() => {
     const hasSession = supabaseAuth.getSessionInfo();
 
     hasSession ? setIsLogged(true) : setIsLogged(false);
   }, [])
-
 
   useEffect(() => {
     function getProductDataByUrl(){
@@ -44,47 +58,47 @@ export default function EditPage() {
   }, [isEditedDataSubmitted])
 
   useEffect(async () => {
-    const {id} = supabaseAuth.getUser();
-
     if(isEditedDataSubmitted) {
-      const updatedData = await supabaseDatabase.select({
-        inTable: 'userProducts', 
-        select: 'items', 
-        match: {userId: id}
-      })  
-        .then(data => data[0].items )
-        .then(data => data.map(product => {
-          if(product.name === queryStringValues.name && product.price == queryStringValues.price) return {
+      const {id} = supabaseAuth.getUser();
+
+      async function getUserProducts() {
+        return await supabaseDatabase.select({
+          inTable: 'userProducts', 
+          select: 'items', 
+          match: {userId: id}
+        })  
+        .then(data => data[0].items );
+      }
+
+      async function replaceProductData(getProducts) {
+        const products = await getProducts();
+
+        const productsWithReplacedData = products.map(product => {
+          const isNameMatched = product.name === queryStringValues.name;
+          const isPriceMatched = product.price == queryStringValues.price;
+
+          if( isNameMatched && isPriceMatched ) return {
             ...inputUserEditedData,
             thumb: product.thumb
           }
-          return product
-        }))     
+          return product;
+        })
+        return productsWithReplacedData;
+      }
+      
+      async function updateEditedProductOnDatabase() {
+        const updatedData = await replaceProductData(getUserProducts);
 
-        console.log(updatedData)
+        supabaseDatabase.update({
+          inTable: 'userProducts',
+          updatedData: {items: updatedData},
+          match: {userId: id}
+        }) 
+      } 
 
-      supabaseDatabase.update({
-        inTable: 'userProducts',
-        updatedData: {items: updatedData},
-        match: {userId: id}
-      }).then(() => console.log('updated'))  
+      updateEditedProductOnDatabase();
     }
   }, [isEditedDataSubmitted])
-
-  function handleSetInputEdited(event, inputName) {
-    setInputUserEditedData(actualState => {
-      return {
-        ...actualState,
-      [inputName]: event.target.value
-      }
-    })
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    setIsEditedDataSubmited(true)
-  }
 
   return (
     <>
