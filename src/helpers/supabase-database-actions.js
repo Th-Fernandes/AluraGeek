@@ -1,5 +1,10 @@
 import { supabase } from "utils/supabaseClient";
 
+// const database = supabaseDatabase();
+// database
+//   .selectAll()
+//   .from('blabla')
+
 export const supabaseDatabase = {
   async selectAll({ inTable, thenDo, handleError }) {
     const { data, error, status } = await supabase

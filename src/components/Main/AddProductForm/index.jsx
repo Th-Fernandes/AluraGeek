@@ -61,6 +61,7 @@ export function AddProductForm() {
       onSubmit={event => handleSubmitUserInput(event)} 
       setInputUser={setInputUser}
       setUserProductImg={setUserProductImg}
+      actionType="add"
     />
   )
 }

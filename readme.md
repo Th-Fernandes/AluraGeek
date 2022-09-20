@@ -1,21 +1,37 @@
-<h1 align="center"> AluraGeek - o desafio front-end da alura </h1>
-<p align="center"> <img  src="./public/images/general/logo.svg"/> </p>
+<h1 align="center">
+  <img src="./public/images/general/thumb.png" />
+  <img width="300" src="./public/images/general/logo.svg" />
+  <p style="margin-top: 15px font-size: 32px font-weight: 900">
+    O e-commerce do mundo geek
+  </p>
+</h1>
 
-<p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+
+<h2> O que é esse projeto? </h2>
+
+<p> 
+  AluraGeek é um e-commerce do mundo geek. Através dele é possível
+  criar uma conta e publicar seus produtos. Você pode acessar o projeto
+  através desse <a href="https://alura-geek-pink.vercel.app/">link</a>
 </p>
 
-<h2>O que é esse projeto?</h2>
-<p> Se trata da terceira edição do desafio front-end da alura. O projeto em questão é o AluraGeek: uma plataforma de compras e vendas do universo Geek.</p>
+<p align="center">
+  <img src="./public/images/general/products-example.png"  />
+</p>
 
-<h2> Acesso e Instalação do projeto </h2>
-<p>Você pode acessar o projeto através desse <a href="https://alura-geek-pink.vercel.app/">link</a>.</p>
-<p>Ou se preferir baixar, será necessário instalar as dependências do projeto, rodando yarn install.</p>
+ 
+<div>
+  <h2>Ferramentas utilizadas</h2>
+  <ul>
+    <li>React</li>
+    <li>Next.js</li>
+    <li>styled components</li>
+    <li>supabase</li>
+  </ul>
+</div>
 
-<h2>Tecnologias e ferramentas utilizadas</h2>
+## Autor
 
-<ul>
-  <li>next.js</li>
-  <li>styled components</li>
-  <li>supabase</li>
-</ul>
+[![LinkedIn Badge](https://img.shields.io/badge/-@thiagofernandes.dev-FF084A?style=flat-square&labelColor=FF084A&logo=instagram&logoColor=white&link=https://www.linkedin.com/in/thiago-fernandes-front/)](https://www.linkedin.com/in/thiago-fernandes-front/)
+[![Instagram Badge](https://img.shields.io/badge/-@thiagofernandes.dev-FF084A?style=flat-square&labelColor=FF084A&logo=instagram&logoColor=white&link=https://www.instagram.com/thiagofernades.dev/)](https://www.instagram.com/thiagofernades.dev/)
+[![Gmail Badge](https://img.shields.io/badge/-thiagojfcarvalho@gmail.com-FF084A?style=flat-square&labelColor=FF084A&logo=gmail&logoColor=white&link=https://www.instagram.com/thiagofernades.dev/)](mailto:thiagojfcarvalho@gmail.com)

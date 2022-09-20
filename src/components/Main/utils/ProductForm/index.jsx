@@ -8,11 +8,14 @@ import { StyledProductForm, StyledAdmProduct } from "./styles";
   TASK IMPORTANTE: PASSAR O DROP PARA CA
 */
 
-export function ProductForm({onSubmit, setInputUser, setUserProductImg}) {
+export function ProductForm({onSubmit, setInputUser, setUserProductImg, actionType}) {
   return (
     <StyledProductForm onSubmit={onSubmit}>
       <fieldset>
-        <legend>Adicionar novo produto</legend>
+        <legend>
+          { actionType === "add" && 'Adicionar novo produto' }
+          { actionType === "edit" && 'Editar produto'}
+        </legend>
 
         <DropProduct setUserProductImg={setUserProductImg} />
 
